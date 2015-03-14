@@ -1,0 +1,66 @@
+<HTML><HEAD> <TITLE> PGA - Hitch-Hiker's Guide to Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H2><A NAME="PGA:">
+PGA:</A></H2>
+<P> PGA is a simple testbed for basic explorations in
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A>s.</font>
+Command line arguments control a range of parameters, there are a number of built-in problems for
+the
+<font size=-1> <A href="Q99_G.htm#GA">GA</A></font>
+to solve. The current set includes:
+
+<UL>  <P> <LI> maximize the number of bits set in a
+      <font size=-1> <A href="Q99_C.htm#CHROMOSOME">CHROMOSOME</A></font>
+
+<P>   <LI> De Jong's functions DJ1, DJ2, DJ3, DJ5
+
+<P>   <LI> binary F6, used by Schaffer et al
+
+<P>   <LI> a crude 1-d knapsack problem; you specify a target and a set of numbers in an external
+      file, GA tries to find a subset that sums as closely as possible to the target
+
+<P>   <LI> the `royal road' function(s); a chromosome is regarded as a set of consecutive blocks of
+      size K, and scores K for each block entirely filled with 1s, etc; a range of parameters.
+
+<P>   <LI> max contiguous bits, you choose the
+      <font size=-1> <A href="Q99_A.htm#ALLELE">ALLELE</A></font>
+      range.
+
+<P>   <LI> timetabling, with various smart
+      <font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A></font>
+      options; capable of solving a good many real-world timetabling problems (has done so)
+</UL>
+<P> Lots of GA options: rank, roulette, tournament, marriage-tournament, spatially-structured
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A>;</font>
+one-point, two-point, uniform or no
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A>;</font>
+fixed or adaptive mutation; one child or two; etc.
+<P> Default output is curses-based, with optional output to file; can be run non-interactively too
+for batched series of experiments.
+<P> It's easy to add your own problems. Chromosomes are represented as character arrays, so you are
+not (quite) stuck with bit-string problem encodings.
+<P> PGA has been used for teaching for a couple of years now, and has been used as a starting point
+by a fair number of people for their own projects. So it's reasonably reliable. However, if you find
+bugs, or have useful contributions to make, Tell Me! It is available by
+<font size=-1> <A href="Q99_F.htm#FTP">FTP</A></font>
+from
+<A href="ftp://ftp.dai.ed.ac.uk/pub/pga/pga-3.1.tar.gz"
+>ftp://ftp.dai.ed.ac.uk/pub/pga/pga-3.1.tar.gz</A> (see the file pga.README in the same directory
+for more information)
+<P> Peter Ross, Department of AI, University of Edinburgh, 80 South Bridge, Edinburgh EH1 1HN, UK.
+Net: <A href="mailto:peter@aisb.ed.ac.uk">&lt;peter@aisb.ed.ac.uk&gt;</A>
+<P><HR><center>
+<A href="Q20.htm#table">[Software Survey]</A>
+<A href="Q20_3.htm">[Research Projects]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+

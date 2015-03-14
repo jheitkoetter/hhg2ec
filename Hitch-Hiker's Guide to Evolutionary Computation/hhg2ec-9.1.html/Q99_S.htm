@@ -1,0 +1,264 @@
+<HTML><HEAD> <TITLE> Glossary S - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<H2>Evolutionary Computation Glossary</H2>
+<A href="Q99_R.htm">Go to entries beginning with R</A><P>
+
+<H2><A NAME="S">
+S</A></H2>
+
+<P>
+<H3><A NAME= "SAFIER" > SAFIER:</A></H3> An
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY COMPUTATION">EVOLUTIONARY COMPUTATION</A></font>
+<font size=-1> <A href="Q99_F.htm#FTP">FTP</A></font>
+Repository, now defunct. Superceeded by
+<font size=-1> <A href="Q99_E.htm#ENCORE">ENCORE</A>.</font>
+
+<P>
+<H3><A NAME= "SCHEMA" > SCHEMA:</A></H3> A pattern of
+<font size=-1> <A href="Q99_G.htm#GENE">GENE</A></font>
+values in a
+<font size=-1> <A href="Q99_C.htm#CHROMOSOME">CHROMOSOME</A>,</font>
+which may include `dont care' states. Thus in a binary chromosome, each
+<font size=-1> <A href="Q99_S.htm#SCHEMA">SCHEMA</A></font>
+(plural schemata) can be specified by a string of the same length as the chromosome, with each
+character one of {0, 1, #}. A particular chromosome is said to `contain' a particular schema if it
+matches the schema (e.g. chromosome 01101 matches schema #1#0#).
+
+<P>
+ The `order' of a schema is the number of non-dont-care positions specified, while the `defining
+length' is the distance between the furthest two non-dont-care positions. Thus #1##0# is of order 2
+and defining length 3.
+
+<P>
+<H3><A NAME= "SCHEMA THEOREM" > SCHEMA THEOREM:</A></H3> Theorem devised by Holland <A
+href="Q10_3.htm#:HOLLAND92">[HOLLAND92]</a> to explain the behaviour of
+<font size=-1> <A href="Q99_G.htm#GA">GA</A>s.</font>
+In essence, it says that a GA gives exponentially increasing reproductive trials to above average
+schemata. Because each
+<font size=-1> <A href="Q99_C.htm#CHROMOSOME">CHROMOSOME</A></font>
+contains a great many schemata, the rate of
+<font size=-1> <A href="Q99_S.htm#SCHEMA">SCHEMA</A></font>
+processing in the
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+is very high, leading to a phenomenon known as implicit parallelism. This gives a GA with a
+population of size N a speedup by a factor of N cubed, compared to a random search.
+
+<P>
+<H3><A NAME= "SEARCH SPACE" > SEARCH SPACE:</A></H3> If the solution to a task can be represented by
+a set of N real-valued parameters, then the job of finding this solution can be thought of as a
+search in an N-dimensional space. This is referred to simply as the
+<font size=-1> <A href="Q99_S.htm#SEARCH SPACE">SEARCH SPACE</A>.</font>
+More generally, if the solution to a task can be represented using a representation scheme, R, then
+the search space is the set of all possible configurations which may be represented in R.
+
+<P>
+<H3><A NAME= "SEARCH OPERATORS" > SEARCH OPERATORS:</A></H3> Processes used to generate new
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+to be evaluated.
+<font size=-1> <A href="Q99_S.htm#SEARCH OPERATORS">SEARCH OPERATORS</A></font>
+in
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A>s</font>
+are typically based on
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A></font>
+and point
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A>.</font>
+Search operators in
+<font size=-1> <A href="Q99_E.htm#EVOLUTION STRATEGIE">EVOLUTION STRATEGIE</A>s</font>
+and
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY PROGRAMMING">EVOLUTIONARY PROGRAMMING</A></font>
+typically follow from the representation of a solution and often involve Gaussian or lognormal
+perturbations when applied to real-valued vectors.
+
+<P>
+<H3><A NAME= "SELECTION" > SELECTION:</A></H3> The process by which some
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+in a
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+are chosen for
+<font size=-1> <A href="Q99_R.htm#REPRODUCTION">REPRODUCTION</A>,</font>
+typically on the basis of favoring individuals with higher
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A>.</font>
+
+<P>
+<H3><A NAME= "SELF-ADAPTATION" > SELF-ADAPTATION:</A></H3> The inclusion of a mechanism not only to
+evolve the
+<font size=-1> <A href="Q99_O.htm#OBJECT VARIABLES">OBJECT VARIABLES</A></font>
+of a solution, but simultaneously to evolve information on how each solution will generate new
+<font size=-1> <A href="Q99_O.htm#OFFSPRING">OFFSPRING</A>.</font>
+
+<P>
+<H3><A NAME= "SIMULATION" > SIMULATION:</A></H3> The act of modeling a natural process.
+
+<P>
+<H3><A NAME= "SOFT SELECTION" > SOFT SELECTION:</A></H3> The mechanism which allows inferior
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+in a
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+a non-zero probability of surviving into future
+<font size=-1> <A href="Q99_G.htm#GENERATION">GENERATION</A>s.</font>
+See
+<font size=-1> <A href="Q99_H.htm#HARD SELECTION">HARD SELECTION</A>.</font>
+
+<P>
+<H3><A NAME= "SPECIATION" > SPECIATION:</A></H3> (biol) The process whereby a new
+<font size=-1> <A href="Q99_S.htm#SPECIES">SPECIES</A></font>
+comes about.  The most common cause of
+<font size=-1> <A href="Q99_S.htm#SPECIATION">SPECIATION</A></font>
+is that of geographical isolation. If a
+<font size=-1> <A href="Q99_S.htm#SUB-POPULATION">SUB-POPULATION</A></font>
+of a single species is separated geographically from the main
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+for a sufficiently long time, their
+<font size=-1> <A href="Q99_G.htm#GENE">GENE</A>s</font>
+will diverge (either due to differences in
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A></font>
+pressures in different locations, or simply due to
+<font size=-1> <A href="Q99_G.htm#GENETIC DRIFT">GENETIC DRIFT</A>).</font>
+Eventually, genetic differences will be so great that members of the sub-population must be
+considered as belonging to a different (and new) species.
+
+<P>
+ Speciation is very important in evolutionary biology. Small sub-populations can evolve much more
+rapidly than a large population (because genetic changes don't take long to become fixed in the
+population). Sometimes, this
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A></font>
+will produce superior
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+which can outcompete, and eventually replace the species of the original, main population.
+
+<P>
+
+<font size=-1> (<A href="Q99_E.htm#EC">EC</A>)</font>
+Techniques analogous to geographical isolation are used in a number of
+<font size=-1> <A href="Q99_G.htm#GA">GA</A>s.</font>
+Typically, the population is divided into sub-populations, and individuals are only allowed to mate
+with others in the same sub-population. (A small amount of
+<font size=-1> <A href="Q99_M.htm#MIGRATION">MIGRATION</A></font>
+is performed.)
+
+<P>
+ This produces many sub-populations which differ in their characteristics, and may be referred to as
+different "species". This technique can be useful for finding multiple solutions to a problem, or
+simply maintaining diversity in the
+<font size=-1> <A href="Q99_S.htm#SEARCH SPACE">SEARCH SPACE</A>.</font>
+
+<P>
+ Most biology/genetics textbooks contain information on speciation.  A more detailed account can be
+found in <I>"Genetics, Speciation and the Founder Principle",</I> L.V. Giddings, K.Y. Kaneshiro and
+W.W. Anderson (Eds.), Oxford University Press 1989.
+
+<P>
+<H3><A NAME= "SPECIES" > SPECIES:</A></H3> (biol) There is no universally-agreed firm definition of
+a
+<font size=-1> <A href="Q99_S.htm#SPECIES">SPECIES</A>.</font>
+A species may be roughly defined as a collection of living creatures, having similar
+characteristics, which can breed together to produce viable
+<font size=-1> <A href="Q99_O.htm#OFFSPRING">OFFSPRING</A></font>
+similar to their
+<font size=-1> <A href="Q99_P.htm#PARENT">PARENT</A>s.</font>
+Members of one species occupy the same ecological
+<font size=-1> <A href="Q99_N.htm#NICHE">NICHE</A>.</font>
+(Members of different species may occupy the same, or different niches.)
+
+<P>
+
+<font size=-1> (<A href="Q99_E.htm#EC">EC</A>)</font>
+In EC the definition of "species" is less clear, since generally it is always possible for a pair
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+to breed together.  It is probably safest to use this term only in the context of algorithms which
+employ explicit
+<font size=-1> <A href="Q99_S.htm#SPECIATION">SPECIATION</A></font>
+mechanisms.
+
+<P>
+ (biol) The existence of different species allows different ecological niches to be exploited.
+Furthermore, the existence of a variety of different species itself <I>creates</I> new niches, thus
+allowing room for further species. Thus nature bootstraps itself into almost limitless complexity
+and diversity.
+
+<P>
+ Conversely, the domination of one, or a small number of species reduces the number of viable
+niches, leads to a decline in diversity, and a reduction in the ability to cope with new situations.
+
+<P>
+ <I>"Give any one</I> <I>species too much rope, and they'll</I> <I>fuck it up"</I>
+
+<P>
+ --- Roger Waters, "Amused to Death", 1992
+
+<P>
+<H3><A NAME= "STANDARD DEVIATION" > STANDARD DEVIATION:</A></H3> A measurement for the spread of a
+set of data; a measurement for the variation of a random variable.
+
+<P>
+<H3><A NAME= "STATISTICS" > STATISTICS:</A></H3> Descriptive measures of data; a field of
+mathematics that uses probability theory to gain insight into systems' behavior.
+
+<P>
+<H3><A NAME= "STEPSIZE" > STEPSIZE:</A></H3> Typically, the average distance in the appropriate
+space between a
+<font size=-1> <A href="Q99_P.htm#PARENT">PARENT</A></font>
+and its
+<font size=-1> <A href="Q99_O.htm#OFFSPRING">OFFSPRING</A>.</font>
+
+<P>
+<H3><A NAME= "STRATEGY VARIABLE" > STRATEGY VARIABLE:</A></H3> Evolvable parameters that relate the
+distribution of
+<font size=-1> <A href="Q99_O.htm#OFFSPRING">OFFSPRING</A></font>
+from a
+<font size=-1> <A href="Q99_P.htm#PARENT">PARENT</A>.</font>
+
+<P>
+<H3><A NAME= "SUB-POPULATION" > SUB-POPULATION:</A></H3> A
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+may be sub-divided into groups, known as
+<font size=-1> <A href="Q99_S.htm#SUB-POPULATION">SUB-POPULATION</A>s,</font>
+where
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+may only mate with others in the same group. (This technique might be chosen for parallel
+processors). Such sub-divisions may markedly influence the evolutionary dynamics of a population
+(e.g.  Wright's 'shifting  balance' model). Sub-populations may be defined by various
+<font size=-1> <A href="Q99_M.htm#MIGRATION">MIGRATION</A></font>
+constraints: islands with limited arbitrary migration; stepping-stones with migration to neighboring
+islands; isolation-by-distance in which each individual mates only with near neighbors. cf
+<font size=-1> <A href="Q99_P.htm#PANMICTIC POPULATION">PANMICTIC POPULATION</A>,</font>
+<font size=-1> <A href="Q99_S.htm#SPECIATION">SPECIATION</A>.</font>
+
+<P>
+<H3><A NAME= "SUMMERSCHOOL" > SUMMERSCHOOL:</A></H3> (USA) One of the most interesting things in the
+US educational system: class work during the summer break.
+<P><A href="Q99_T.htm">Go to entries beginning with T</A><P>
+<P><HR><P><center>
+Go to entries beginning with:
+<A href="Q99_1.htm">1</A>,
+<A href="Q99_A.htm">A</A>,
+<A href="Q99_B.htm">B</A>,
+<A href="Q99_C.htm">C</A>,
+<A href="Q99_D.htm">D</A>,
+<A href="Q99_E.htm">E</A>,
+<A href="Q99_F.htm">F</A>,
+<A href="Q99_G.htm">G</A>,
+<A href="Q99_H.htm">H</A>,
+<A href="Q99_I.htm">I</A>,
+<A href="Q99_L.htm">L</A>,
+<A href="Q99_M.htm">M</A>,
+<A href="Q99_N.htm">N</A>,
+<A href="Q99_O.htm">O</A>,
+<A href="Q99_P.htm">P</A>,
+<A href="Q99_R.htm">R</A>,
+<A href="Q99_S.htm">S</A>,
+<A href="Q99_T.htm">T</A>,
+<A href="Q99_U.htm">U</A>,
+<A href="Q99_V.htm">V</A>,
+<A href="Q99_Z.htm">Z</A>.
+<P><A href="Q99.htm">[Glossary top level]</A>
+
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+

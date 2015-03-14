@@ -1,0 +1,66 @@
+<HTML><HEAD> <TITLE> GenET - Hitch-Hiker's Guide to Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H2><A NAME="GenET:">
+GenET:</A></H2>
+<P> GenET is a "generic"
+<font size=-1> <A href="Q99_G.htm#GA">GA</A></font>
+package.  It is generic in the sense that all problem independent mechanisms have been implemented
+and can be used regardless of application domain.  Using the package forces (or allows, however you
+look at it) concentration on the problem: you have to suggest the best representation, and the best
+operators for such space that utilize your problem-specific knowledge.  You do not have to think
+about possible GA models or their implementation.
+<P> The package, in addition to allowing for fast implementation of applications and being a natural
+tool for comparing different models and strategies, is intended to become a depository of
+representations and operators.  Currently, only floating point representation is implemented in the
+library with few operators.
+<P> The algorithm provides a wide selection of models and choices. For example,
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+models range from generational GA, through steady-state, to (n,m)-EP and (n,n+m)-EP models (for
+arbitrary problems, not just parameter
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A>).</font>
+(Some are not finished at the moment).  Choices include automatic adaptation of operator
+probabilities and a dynamic ranking mechanism, etc.
+<P> Even though the implementation is far from optimal, it is quite efficient - implemented in ATT's
+C++ (3.0) (functional design) and also tested on gcc.  Along with the package you will get two
+examples. They illustrate how to implement problems with heterogeneous and homogeneous structures,
+with explicit rep/opers and how to use the existing library (FP).  Very soon I will place there
+another example - our GENOCOP operators for linearly constrained optimization.  One more example
+soon to appear illustrates how to deal with complex structures and non-stationary problems - this is
+a fuzzy rule-based controller optimized using the package and some specific rep/operators.
+<P> If you start using the package, please send evaluations (especially bugs) and suggestions for
+future versions to the author.
+<P> GenET Version 1.00 is available by
+<font size=-1> <A href="Q99_F.htm#FTP">FTP</A></font>
+from
+<A href="ftp://radom.umsl.edu/var/ftp/GenET.tar.Z" >ftp://radom.umsl.edu/var/ftp/GenET.tar.Z</A> To
+learn more, you may get the User's Manual, available in compressed postscript in
+"/var/ftp/userMan.ps.Z". It also comes bundled with the complete package.
+<P> Cezary Z. Janikow, Department of Math and CS, CCB319, St. Louis, MO 63121, USA.  Net:
+<A href="mailto:janikow@radom.umsl.edu">&lt;janikow@radom.umsl.edu&gt;</A>
+<P><HR><center>
+<A href="Q20.htm#table">[Software Survey]</A>
+<A href="Q20_3.htm">[Research Projects]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

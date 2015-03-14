@@ -1,0 +1,264 @@
+<HTML><HEAD> <TITLE> Q1.2 - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H1><A href=Q1_2.htm>Q1.2</A>: What's Evolutionary Programming (EP)?</H1>
+<P>
+<P>
+
+<H3>Introduction</H3>
+<P>
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY PROGRAMMING">EVOLUTIONARY PROGRAMMING</A>,</font>
+originally conceived by Lawrence J.  Fogel in 1960, is a stochastic
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+strategy similar to
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A>s,</font>
+but instead places emphasis on the behavioral linkage between
+<font size=-1> <A href="Q99_P.htm#PARENT">PARENT</A>s</font>
+and their
+<font size=-1> <A href="Q99_O.htm#OFFSPRING">OFFSPRING</A>,</font>
+rather than seeking to emulate specific
+<font size=-1> <A href="Q99_G.htm#GENETIC OPERATOR">GENETIC OPERATOR</A>s</font>
+as observed in nature.  Evolutionary programming is similar to
+<font size=-1> <A href="Q99_E.htm#EVOLUTION STRATEGIE">EVOLUTION STRATEGIE</A>s,</font>
+although the two approaches developed independently (see below).
+<P> Like both
+<font size=-1> <A href="Q99_E.htm#ES">ES</A></font>
+and
+<font size=-1> <A href="Q99_G.htm#GA">GA</A>s,</font>
+<font size=-1> <A href="Q99_E.htm#EP">EP</A></font>
+is a useful method of optimization when other techniques such as gradient descent or direct,
+analytical discovery are not possible.  Combinatoric and real-valued
+<font size=-1> <A href="Q99_F.htm#FUNCTION OPTIMIZATION">FUNCTION OPTIMIZATION</A></font>
+in which the optimization surface or
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+landscape is "rugged", possessing many locally optimal solutions, are well suited for evolutionary
+programming.
+<P>
+
+<H3>History</H3>
+<P> The 1966 book, "Artificial Intelligence Through Simulated Evolution" by Fogel, Owens and Walsh
+is the landmark publication for EP applications, although many other papers appear earlier in the
+literature.  In the book, finite state automata were evolved to predict symbol strings generated
+from Markov processes and non-stationary time series.  Such evolutionary prediction was motivated by
+a recognition that prediction is a keystone to intelligent behavior (defined in terms of adaptive
+behavior, in that the intelligent organism must anticipate events in order to adapt behavior in
+light of a goal).
+<P> In 1992, the First Annual Conference on evolutionary programming was held in La Jolla, CA.
+Further conferences have been held annually (See <A href=Q12.htm>Q12</A>).  The conferences attract a diverse group of
+academic, commercial and military researchers engaged in both developing the theory of the EP
+technique and in applying EP to a wide range of optimization problems, both in engineering and
+biology.
+<P> Rather than list and analyze the sources in detail, several fundamental sources are listed below
+which should serve as good pointers to the entire body of work in the field.
+<P>
+
+<H3>The Process</H3>
+<P> For EP, like GAs, there is an underlying assumption that a fitness landscape can be
+characterized in terms of variables, and that there is an optimum solution (or multiple such optima)
+in terms of those variables.  For example, if one were trying to find the shortest path in a
+Traveling Salesman Problem, each solution would be a path.  The length of the path could be
+expressed as a number, which would serve as the solution's fitness.  The fitness landscape for this
+problem could be characterized as a hypersurface proportional to the path lengths in a space of
+possible paths.  The goal would be to find the globally shortest path in that space, or more
+practically, to find very short tours very quickly.
+<P> The basic EP method involves 3 steps (Repeat until a threshold for iteration is exceeded or an
+adequate solution is obtained):
+
+<P>
+(1) Choose an initial
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+of trial solutions at random. The number of solutions in a population is highly relevant to the
+speed of optimization, but no definite answers are available as to how many solutions are
+appropriate (other than &gt;1) and how many solutions are just wasteful.
+
+<P>
+(2) Each solution is replicated into a new population.  Each of these offspring solutions are
+mutated according to a distribution of
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A></font>
+types, ranging from minor to extreme with a continuum of mutation types between.  The severity of
+mutation is judged on the basis of the functional change imposed on the parents.
+
+<P>
+(3) Each offspring solution is assessed by computing its fitness.  Typically, a stochastic
+tournament is held to determine N solutions to be retained for the population of solutions, although
+this is occasionally performed deterministically.  There is no requirement that the population size
+be held constant, however, nor that only a single offspring be generated from each parent.
+</UL>
+<P> It should be pointed out that EP typically does not use any
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A></font>
+as a genetic operator.
+<P>
+
+<H3>EP and GAs</H3>
+<P> There are two important ways in which EP differs from GAs.
+<P> First, there is no constraint on the representation.  The typical GA approach involves encoding
+the problem solutions as a string of representative tokens, the
+<font size=-1> <A href="Q99_G.htm#GENOME">GENOME</A>.</font>
+In EP, the representation follows from the problem.  A neural network can be represented in the same
+manner as it is implemented, for example, because the mutation operation does not demand a linear
+encoding.  (In this case, for a fixed topology, real- valued weights could be coded directly as
+their real values and mutation operates by perturbing a weight vector with a zero mean multivariate
+Gaussian perturbation.  For variable topologies, the architecture is also perturbed, often using
+Poisson distributed additions and deletions.)
+<P> Second, the mutation operation simply changes aspects of the solution according to a statistical
+distribution which weights minor variations in the behavior of the offspring as highly probable and
+substantial variations as increasingly unlikely.  Further, the severity of mutations is often
+reduced as the global optimum is approached.  There is a certain tautology here: if the global
+optimum is not already known, how can the spread of the mutation operation be damped as the
+solutions approach it?  Several techniques have been proposed and implemented which address this
+difficulty, the most widely studied being the "Meta-Evolutionary" technique in which the variance of
+the mutation distribution is subject to mutation by a fixed variance mutation operator and evolves
+along with the solution.
+<P>
+
+<H3>EP and ES</H3>
+<P> The first communication between the evolutionary programming and
+<font size=-1> <A href="Q99_E.htm#EVOLUTION STRATEGY">EVOLUTION STRATEGY</A></font>
+groups occurred in early 1992, just prior to the first annual EP conference.  Despite their
+independent development over 30 years, they share many similarities.  When implemented to solve
+real-valued function optimization problems, both typically operate on the real values themselves
+(rather than any coding of the real values as is often done in GAs). Multivariate zero mean Gaussian
+mutations are applied to each parent in a population and a
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A></font>
+mechanism is applied to determine which solutions to remove (i.e., "cull") from the population.  The
+similarities extend to the use of self-adaptive methods for determining the appropriate mutations to
+use -- methods in which each parent carries not only a potential solution to the problem at hand,
+but also information on how it will distribute new trials (offspring). Most of the theoretical
+results on convergence (both asymptotic and velocity) developed for ES or EP also apply directly to
+the other.
+<P> The main differences between ES and EP are:
+
+<P>
+1.  Selection: EP typically uses stochastic selection via a tournament.  Each trial solution in the
+population faces competition against a preselected number of opponents and receives a "win" if it is
+at least as good as its opponent in each encounter.  Selection then eliminates those solutions with
+the least wins.  In contrast, ES typically uses deterministic selection in which the worst solutions
+are purged from the population based directly on their function evaluation.
+
+<P>
+2.
+<font size=-1> <A href="Q99_R.htm#RECOMBINATION">RECOMBINATION</A>:</font>
+EP is an abstraction of
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A></font>
+at the level of reproductive populations (i.e.,
+<font size=-1> <A href="Q99_S.htm#SPECIES">SPECIES</A>)</font>
+and thus no recombination mechanisms are typically used because recombination does not occur between
+species (by definition: see Mayr's biological species concept).  In contrast, ES is an abstraction
+of evolution at the level of
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A></font>
+behavior.  When self-adaptive information is incorporated this is purely genetic information (as
+opposed to phenotypic) and thus some forms of recombination are reasonable and many forms of
+recombination have been implemented within ES.  Again, the effectiveness of such operators depends
+on the problem at hand.
+</UL>
+<P>
+
+<H3>References</H3>
+<P> Some references which provide an excellent introduction (by no means extensive) to the field,
+include:
+<P> Artificial Intelligence Through Simulated Evolution <A href="Q10_3.htm#:Fogel66">[Fogel66]</a>
+(primary)
+<P> Fogel DB (1995) "Evolutionary Computation: Toward a New Philosophy of Machine Intelligence,"
+IEEE Press, Piscataway, NJ.
+<P> Proceeding of the first <A href="Q12.htm#:EP92">[EP92]</a>, second <A
+href="Q12.htm#:EP93">[EP93]</a> and third <A href="Q12.htm#:EP94">[EP94]</a> Annual Conference on
+Evolutionary Programming (primary) (See <A href=Q12.htm>Q12</A>).
+<P>
+
+<H2><A NAME="PSEUDO CODE">
+PSEUDO CODE</A></H2>
+<PRE>
+
+<B>Algorithm</B> EP <B>is</B>
+<P>
+<I>  // start with an initial time</I>
+     t := 0;
+<P>
+<I>  // initialize a usually random population of individuals</I>
+     initpopulation P (t);
+<P>
+<I>  // evaluate fitness of all initial individuals of population</I>
+     evaluate P (t);
+<P>
+<I>  // test for termination criterion (time, fitness, etc.)</I>
+     <B>while</B> not done <B>do</B>
+<P>
+<I>       // perturb the whole population stochastically</I>
+	  P'(t) := mutate P (t);
+<P>
+<I>       // evaluate its new fitness</I>
+	  evaluate P' (t);
+<P>
+<I>       // stochastically select the survivors from actual fitness</I>
+	  P(t+1) := survive P(t),P'(t);
+<P>
+<I>       // increase the time counter</I>
+	  t := t + 1;
+<P>
+<B>  od</B>
+<B>end</B> EP.
+</PRE>
+
+<P>
+<P> [Eds note: An extended version of this introduction is available from
+<font size=-1> <A href="Q99_E.htm#ENCORE">ENCORE</A></font>
+(see <A href=Q15_3.htm>Q15.3</A>) in <B>/FAQ/supplements/what-is-ep</B> ]
+<P>
+<HR><P><center><A href="Q1_1.htm">[Previous question]</A>
+<A href="Q1_3.htm">[Next question]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

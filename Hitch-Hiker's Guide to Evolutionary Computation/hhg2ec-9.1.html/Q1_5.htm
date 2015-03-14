@@ -1,0 +1,66 @@
+<HTML><HEAD> <TITLE> Q1.5 - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H1><A href=Q1_5.htm>Q1.5</A>: What's Genetic Programming (GP)?</H1>
+<P>
+<P>
+<font size=-1> <A href="Q99_G.htm#GENETIC PROGRAMMING">GENETIC PROGRAMMING</A></font>
+is the extension of the genetic model of learning into the space of programs. That is, the objects
+that constitute the
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+are not fixed-length character strings that encode possible solutions to the problem at hand, they
+are programs that, when executed, "are" the candidate solutions to the problem. These programs are
+expressed in genetic programming as parse trees, rather than as lines of code.  Thus, for example,
+the simple program "a + b * c" would be represented as:
+<P>
+<PRE>
+
+	    +
+	   / \
+	   a  *
+	    / \
+	    b  c
+</PRE>
+
+<P> or, to be precise, as suitable data structures linked together to achieve this effect. Because
+this is a very simple thing to do in the programming language Lisp, many GPers tend to use Lisp.
+However, this is simply an implementation detail. There are straightforward methods to implement
+<font size=-1> <A href="Q99_G.htm#GP">GP</A></font>
+using a non-Lisp programming environment.
+<P> The programs in the population are composed of elements from the
+<font size=-1> <A href="Q99_F.htm#FUNCTION SET">FUNCTION SET</A></font>
+and the
+<font size=-1> <A href="Q99_T.htm#TERMINAL SET">TERMINAL SET</A>,</font>
+which are typically fixed sets of symbols selected to be appropriate to the solution of problems in
+the domain of interest.
+<P> In GP the
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A></font>
+operation is implemented by taking randomly selected subtrees in the
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+(selected according to
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A>)</font>
+and exchanging them.
+<P> It should be pointed out that GP usually does not use any
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A></font>
+as a
+<font size=-1> <A href="Q99_G.htm#GENETIC OPERATOR">GENETIC OPERATOR</A>.</font>
+<P> More information is available in the GP mailing list
+<font size=-1> <A href="Q99_F.htm#FAQ">FAQ</A>.</font>
+(See <A href=Q15_2.htm>Q15.2</A>) and from
+<A href="http://smi-web.stanford.edu/people/koza/" >http://smi-web.stanford.edu/people/koza/</A>
+<P>
+<HR><P><center><A href="Q1_4.htm">[Previous question]</A>
+<A href="Q2.htm">[Next question]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+

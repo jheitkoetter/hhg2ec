@@ -1,0 +1,198 @@
+<HTML><HEAD> <TITLE> Q5 - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H1><A href=Q5.htm>Q5</A>: What about all this Optimization stuff?</H1>
+<P>
+<P> Just think of an
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+problem as a black box.  A large black box. As large as, for example, a Coca-Cola vending machine.
+Now, we don't know anything about the inner workings of this box, but see, that there are some
+regulators to play with, and of course we know, that we want to have a bottle of the real thing...
+<P> Putting this everyday problem into a mathematical model, we proceed as follows:
+
+<UL>
+    <P> (1) we label all the regulators with <I>x</I> and a number starting from 1; the result is a
+    vector <I>x</I>, i.e. <I>(x_1,...,x_n)</I>, where <I>n</I> is the number of visible regulators.
+
+<P> (2) we must find an objective function, in this case it's obvious, we want to get <I>k</I>
+    bottles of the real thing, where <I>k</I> is equal to 1. [some might want a "greater or equal"
+    here, but we restricted ourselves to the visible regulators (we all know that sometimes a "kick
+    in the right place" gets use more than 1, but I have no idea how to put this mathematically...)]
+
+<P> (3) thus, in the language some mathematicians prefer to speak in: <I>f(x) = k =</I> 1. So, what
+    we have here is a maximization problem presented in a form we know from some boring calculus
+    lessons, and we also know that there at least a dozen utterly uninteresting techniques to solve
+    problems presented this way...
+</UL>
+<P>
+
+<H2><A NAME="What can we do in order to solve this problem?">
+What can we do in order to solve this problem?</A></H2>
+<P> We can either try to gain more knowledge or exploit what we already know about the interior of
+the black box. If the objective function turns out to be smooth and differentiable, analytical
+methods will produce the exact solution.
+<P> If this turns out to be impossible, we might resort to the brute force method of enumerating the
+entire
+<font size=-1> <A href="Q99_S.htm#SEARCH SPACE">SEARCH SPACE</A>.</font>
+But with the number of possibilities growing exponentially in <I>n</I>, the number of dimensions
+(inputs), this method becomes infeasible even for low-dimensional spaces.
+<P> Consequently, mathematicians have developed theories for certain kinds of problems leading to
+specialized
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+procedures. These algorithms perform well if the black box fulfils their respective prerequisites.
+For example, Dantzig's <I>simplex algorithm</I> (Dantzig 66) probably represents the best known
+multidimensional method capable of efficiently finding the global optimum of a linear, hence convex,
+objective function in a search space limited by linear constraints.  (A
+<font size=-1> <A href="Q99_U.htm#USENET">USENET</A></font>
+<font size=-1> <A href="Q99_F.htm#FAQ">FAQ</A></font>
+on linear programming is maintained by <I>Professor Robert Fourer</I> <A href="mailto:4er@iems.nwu.edu">&lt;4er@iems.nwu.edu&gt;</A>
+(and "nonlinear-programming-faq") that is posted monthly to <A href=news:sci.op-research >sci.op-
+research</A> and is mostly interesting to read.  It is also available from
+<A href="http://www-unix.mcs.anl.gov/otc/Guide/faq/linear-programming-faq.html" >http://www-
+unix.mcs.anl.gov/otc/Guide/faq/linear-programming-faq.html</A> )
+<P> <I>Gradient strategies</I> are no longer tied to these linear worlds, but they smooth their
+world by exploiting the objective function's first partial derivatives one has to supply in advance.
+Therefore, these algorithms rely on a locally linear internal model of the black box.
+<P> <I>Newton strategies</I> additionally require the second partial derivatives, thus building a
+quadratic internal model.  <I>Quasi-Newton</I>, conjugate gradient and variable metric strategies
+approximate this information during the search.
+<P> The deterministic strategies mentioned so far cannot cope with deteriorations, so the search
+will stop if anticipated improvements no longer occur. In a multimodal
+<font size=-1> <A href="Q99_E.htm#ENVIRONMENT">ENVIRONMENT</A></font>
+these algorithms move "uphill" from their respective starting points. Hence, they can only converge
+to the next local optimum.
+<P> <I>Newton-Raphson-methods</I> might even diverge if a discrepancy between their internal
+assumptions and reality occurs.  But of course, these methods turn out to be superior if a given
+task matches their requirements. Not relying on derivatives, polyeder strategy, pattern search and
+<I>rotating coordinate search</I> should also be mentioned here because they represent robust non-
+linear optimization algorithms (Schwefel 81).
+<P> Dealing with technical optimization problems, one will rarely be able to write down the
+objective function in a closed form.  We often need a
+<font size=-1> <A href="Q99_S.htm#SIMULATION">SIMULATION</A></font>
+model in order to grasp reality.  In general, one cannot even expect these models to behave
+smoothly. Consequently, derivatives do not exist. That is why optimization algorithms that can
+successfully deal with black box-type situations have been developed. The increasing applicability
+is of course paid for by a loss of "convergence velocity," compared to algorithms specially designed
+for the given problem.  Furthermore, the <I>guarantee to find the global optimum no longer
+exists!</I>
+<P>
+
+<H2><A NAME="But why turn to nature when looking for more powerful algorithms?">
+But why turn to nature when looking for more powerful algorithms?</A></H2>
+<P> In the attempt to create tools for various purposes, mankind has copied, more often
+instinctively than geniously, solutions invented by nature.  Nowadays, one can prove in some cases
+that certain forms or structures are not only well adapted to their
+<font size=-1> <A href="Q99_E.htm#ENVIRONMENT">ENVIRONMENT</A></font>
+but have even reached the optimum (Rosen 67). This is due to the fact that the laws of nature have
+remained stable during the last 3.5 billion years. For instance, at branching points the measured
+ratio of the diameters in a system of blood-vessels comes close to the theoretical optimum provided
+by the laws of fluid dynamics (2^-1/3).  This, of course, only represents a limited, engineering
+point of view on nature. In general, nature performs <I>adaptation,</I> not <I>optimization.
+</I>
+<P> The idea to imitate basic principles of natural processes for optimum seeking procedures emerged
+more than three decades ago (cf <A href=Q10_3.htm>Q10.3</A>).  Although these algorithms have proven to be robust and
+direct
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+tools, it is only in the last five years that they have caught the researchers' attention. This is
+due to the fact that many people still look at organic
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A></font>
+as a giantsized game of dice, thus ignoring the fact that this model of evolution cannot have
+worked: a human germ-cell comprises approximately 50,000
+<font size=-1> <A href="Q99_G.htm#GENE">GENE</A>s,</font>
+each of which consists of about 300 triplets of nucleic bases. Although the four existing bases only
+encode 20 different amino acids, 20^15,000,000, ie circa 10^19,500,000 different
+<font size=-1> <A href="Q99_G.htm#GENOTYPE">GENOTYPE</A>s</font>
+had to be tested in only circa 10^17 seconds, the age of our planet. So, simply rolling the dice
+could not have produced the diversity of today's complex living systems.
+<P> Accordingly, taking random samples from the high-dimensional parameter space of an objective
+function in order to hit the global optimum must fail (<I>Monte-Carlo search</I>). But by looking at
+organic evolution as a cumulative, highly parallel sieving process, the results of which pass on
+slightly modified into the next sieve, the amazing diversity and efficiency on earth no longer
+appears miraculous. When building a model, the point is to isolate the main mechanisms which have
+led to today's world and which have been subjected to evolution themselves.  Inevitably, nature has
+come up with a mechanism allowing
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+of one
+<font size=-1> <A href="Q99_S.htm#SPECIES">SPECIES</A></font>
+to exchange parts of their genetic information
+<font size=-1> (<A href="Q99_R.htm#RECOMBINATION">RECOMBINATION</A></font>
+or
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A>),</font>
+thus being able to meet changing environmental conditions in a better way.
+<P> Dantzig, G.B. (1966) "Lineare Programmierung und Erweiterungen", Berlin: Springer. (Linear
+programming and extensions)
+<P> Kursawe, F. (1994) " Evolution strategies: Simple models of natural processes?", Revue
+Internationale de Syst&euml;mique, France (to appear).
+<P> Rosen, R. (1967) "Optimality Principles in Biologie", London: Butterworth.
+<P> Schwefel, H.-P. (1981) "Numerical Optimization of Computer Models", Chichester: Wiley.
+<HR><P><center><A href="Q4_1.htm">[Previous question]</A>
+<A href="Q10.htm">[Next question]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

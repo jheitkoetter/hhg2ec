@@ -1,0 +1,528 @@
+<HTML><HEAD> <TITLE> Q2 - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H1><A href=Q2.htm>Q2</A>: What applications of EAs are there?</H1>
+<P>
+<P> In principle,
+<font size=-1> <A href="Q99_E.htm#EA">EA</A>s</font>
+can compute any computable function, i.e.  everything a normal digital computer can do.
+<P> But EAs are especially badly suited for problems where efficient ways of solving them are
+already known, (unless these problems are intended to serve as benchmarks).  Special purpose
+algorithms, i.e.  algorithms that have a certain amount of problem domain knowledge hard coded into
+them, will usually outperform EAs, so there is no black magic in
+<font size=-1> <A href="Q99_E.htm#EC">EC</A>.</font>
+EAs should be used when there is no other known problem solving strategy, and the problem domain is
+NP-complete.  That's where EAs come into play: heuristically finding solutions where all else fails.
+<P> Following is an incomplete <I>(sic!)</I> list of successful EA applications:
+<P>
+<UL><LI><a href=#alife>Artificial Life</a>
+<LI><a href=#biocomputing>Biocomputing</a>
+<LI><a href=#cellular>Cellular Programming</a>
+<LI><a href=#hardware>Evolvable Hardware</a>
+<LI><a href=#games>Game Playing</a>
+<LI><a href=#jss>Job-Shop Scheduling</a>
+<LI><a href=#management>Management Sciences</a>
+<LI><a href=#filter>Non-linear Filtering</a>
+<LI><a href=#timetabling>Timetabling</a>
+</UL>
+
+<HR><a name=alife>
+
+<H2><A NAME="ARTIFICIAL LIFE">
+ARTIFICIAL LIFE</A></H2>
+<font size=-1> <A href="Q99_A.htm#ARTIFICIAL LIFE">ARTIFICIAL LIFE</A></font>
+<font size=-1> (<A href="Q99_A.htm#ALIFE">ALIFE</A>)</font>
+systems attempt to simulate the kind of behaviour exhibited by real, living creatures. Not all
+Artificial Life systems employ
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY ALGORITHM">EVOLUTIONARY ALGORITHM</A>s</font>
+(see <A href=Q4_1.htm>Q4.1</A>).
+<P> <B>Framsticks</B>
+<P> Framsticks is a three-dimensional life
+<font size=-1> <A href="Q99_S.htm#SIMULATION">SIMULATION</A></font>
+project. Both the physical structure of creatures and their control systems are evolved.
+Evolutionary algorithms are used with
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A>,</font>
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A></font>
+and
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A>.</font>
+Finite element methods are used for simulation. Both spontaneous and directed
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A>s</font>
+are possible.
+<P> This system uses the standard
+<font size=-1> <A href="Q99_E.htm#EA">EA</A></font>
+framework to evolve 3D agents equipped with neural networks. It has proved to be an attractive tool
+for people who want to learn about the way evolutionary
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+techniques work.
+<P> This is shareware, but all the evolutionary features are available free. The project is open,
+and developers can take part in it, and also conduct their own experiments (i.e.  using their own
+<font size=-1> <A href="Q99_G.htm#GENETIC OPERATOR">GENETIC OPERATOR</A>s).</font>
+There are links to the scientific papers on the web page, as well as the detailed program
+documentation. The software is quite general and can be used to study a range of problems, including
+coevolution of body and brain.
+<P> For more details, see:
+<A href="http://www.frams.poznan.pl/" >http://www.frams.poznan.pl/</A>
+<HR><a name=biocomputing>
+
+<H2><A NAME="BIOCOMPUTING">
+BIOCOMPUTING</A></H2>
+<P> Biocomputing, or Bioinformatics, is the field of biology dedicated to the automatic analysis of
+experimental data (mostly sequencing data). Several approaches to specific biocomputing problems
+have been described that involve the use of
+<font size=-1> <A href="Q99_G.htm#GA">GA</A>,</font>
+<font size=-1> <A href="Q99_G.htm#GP">GP</A></font>
+and simulated annealing.  General information about biocomputing (software, databases, misc.) can be
+found on the server of the European Bioinformatics Institute:
+<A href="http://www.ebi.ac.uk/ebi_home.html" >http://www.ebi.ac.uk/ebi_home.html</A>
+<font size=-1> <A href="Q99_E.htm#ENCORE">ENCORE</A></font>
+has a good selection of pointers related to this subject.  VSCN provides a detailed online course on
+bioinformatics:
+<A href="http://www.techfak.uni-bielefeld.de/bcd/Curric/welcome.html" >http://www.techfak.uni-
+bielefeld.de/bcd/Curric/welcome.html</A>
+<P> There are three main domains to which GA have been applied in Bioinformatics: protein folding,
+RNA folding, sequence alignment.
+<P> <B>Protein Folding</B>
+<P> Proteins are one of the essential components of any form of life. They are made of twenty
+different types of amino acid.  These amino acids are chained together in order to form the protein
+that can contain from a few to several thousands residues. In most of the cases, the properties and
+the function of a protein are a result of its three dimensional structure.  It seems that in many
+cases this structure is a direct consequence of the sequence. Unfortunately, it is still very
+difficult/impossible to deduce the three dimensional structure, knowing only the sequence.  A part
+of the VSCN on-line bioinformatics course is dedicated to the use of GAs in Protein Folding
+Prediction. It contains an extensive bibliography and a detailed presentation of the subject with
+LOTS of explanations and on-line papers. The URL is:
+<A href="http://www.techfak.uni-bielefeld.de/bcd/Curric/ProtEn/contents.html"
+>http://www.techfak.uni-bielefeld.de/bcd/Curric/ProtEn/contents.html</A>
+<P> Koza <A href="Q10_2.htm#:KOZA92">[KOZA92]</a> gives one example of GP applied to Protein
+Folding.  Davis <A href="Q10_2.htm#:DAVIS91">[DAVIS91]</a> gives an example of
+<font size=-1> <A href="Q99_D.htm#DNA">DNA</A></font>
+conformation prediction (a closely related problem) in his <I>Handbook of GAs.</I>
+<P> <B>RNA Folding</B>
+<P> Describing the tertiary structure of an RNA molecule, is about as hard as for a protein, but
+describing the intermediate structure (secondary structure) is somehow easier because RNA molecules
+are using the same pairing rules as DNA, (Watson and Crick base pairing). There exist deterministic
+algorithms that given a set of constraints (rules), compute the more stable structure, but: (a)
+their time and memory requirement increase quadratically or more with the length of the sequences,
+and (b) they require simplified rules.  Lots of effort has recently been put into applying GAs to
+this problem, and several papers can be found (on-line if your institute subscribes to these
+journals):
+<P> <I>A genetic Algorithm Based Molecular Modelling Technique</I> <I>For RNA Stem-loop
+Structures</I> H. Ogata, Y. Akiyama and M Kanehisa, Nucleic Acid Research, 1995, vol 23,3
+419-426
+<P> <I>An Annealing Mutation Operator in the GA for RNA folding</I> B.A Shapiro and J. C.
+Wu, CABIOS, 1996, vol 12, 3, 171-180
+<P> <I>The computer Simulation of RNA Folding Pathway Using a Genetic Algorithm</I> A.P.
+Gultyaev, F.D.H van Batenburg and C. W. A. Pleij in Journal of Molecular Biology, 1995, vol 250
+37-51
+<P> Simulated Annealing has also been applied successfully to this problem:
+<P> <I>Description of RNA folding by SA</I> M. Schmitz and G. Steger in Journal of Molecular
+Biology, 1995, 255, 245-266
+<P> <B>Sequence Alignments</B>
+<P> Sequence Alignment is another important problem of Bioinformatics. The aim is to align together
+several related sequences (from two to hundreds) given a cost function.  For the most widely  used
+cost functions, the problem has been shown to be NP-complete.  Several attempts have been made using
+SA:
+<P> <I>Multiple Sequence Alignment Using SA</I> J. Kim, Sakti Pramanik and M.J. Chung,
+CABIOS, 1994, vol 10, 4, 419-426
+<P> <I>Multiple Sequence Alignment by Parallel SA</I> M. Isshikawa, T. Koya and al, CABIOS,
+1993,vol 9, 3, 267-273
+<P> SAM, software which uses Hidden Markov Models for Multiple Sequence Alignment, can use SA to
+train the model. Several papers have been published on SAM.  The software, documentation and an
+extensive bibliography can be found in:
+<A href="http://www.cse.ucsc.edu/research/compbio/sam.html"
+>http://www.cse.ucsc.edu/research/compbio/sam.html</A>
+<P> More recently, various software using different methods like Gibbs sampling or GAs has been
+developed:
+<P> <I>A Gibbs Sampling Strategy for Multiple Alignment</I> C.E. Lawrence, S. F. Altschull
+and al, Science, October 1993, vol 262, 208-214
+<P> <I>SAGA: Sequence Alignment by Genetic Algorithm</I> C. Notredame and D.G. Higgins,
+Nucleic Acid Research, 1995, vol 24, 8,
+ 1515-1524
+<P> A  beta release of SAGA (along with the paper) is available on the European Bioinformatics
+Institute anonymous
+<font size=-1> <A href="Q99_F.htm#FTP">FTP</A></font>
+server:
+<A href="ftp://ftp.ebi.ac.uk/pub/software/unix/saga.tar.Z"
+>ftp://ftp.ebi.ac.uk/pub/software/unix/saga.tar.Z</A>
+<P>
+<HR><a name=cellular>
+
+<H2><A NAME="CELLULAR PROGRAMMING: Evolution of Parallel Cellular Machines">
+CELLULAR PROGRAMMING: Evolution of Parallel Cellular Machines</A></H2>
+<P> Nature abounds in systems involving the actions of simple, locally-interacting components, that
+give rise to coordinated global behavior.  These collective systems have evolved by means of natural
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A></font>
+to exhibit striking problem-solving capacities, while functioning within a complex, dynamic
+<font size=-1> <A href="Q99_E.htm#ENVIRONMENT">ENVIRONMENT</A>.</font>
+Employing simple yet versatile parallel cellular models, coupled with
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY COMPUTATION">EVOLUTIONARY COMPUTATION</A></font>
+techniques, cellular programming is an approach for constructing man-made systems that exhibit
+characteristics such as those manifest by their natural counterparts.
+<P> Parallel cellular machines hold potential both scientifically, as vehicles for studying
+phenomena of interest in areas such as complex adaptive systems and
+<font size=-1> <A href="Q99_A.htm#ARTIFICIAL LIFE">ARTIFICIAL LIFE</A>,</font>
+as well as practically, enabling the construction of novel systems, endowed with evolutionary,
+reproductive, regenerative, and learning capabilities.
+<P> Web site:
+<A href="http://lslwww.epfl.ch/~moshes/cp.html" >http://lslwww.epfl.ch/~moshes/cp.html</A>
+<P> <B>References:</B>
+<P> Sipper, M. (1997) "Evolution of Parallel Cellular Machines: The Cellular Programming Approach",
+Springer-Verlag, Heidelberg.
+<P> Sipper, M. (1996) "Co-evolving Non-Uniform Cellular Automata to Perform Computations", Physica
+D, 92, 193-208.
+<P> Sipper, M. and Ruppin, E. (1997) "Co-evolving architectures for cellular machines", Physica D,
+99, 428-441.
+<P> Sipper, M. and Tomassini, M. (1996) "Generating Parallel Random Number Generators By Cellular
+Programming", International Journal of Modern Physics C, 7(2), 181-190.
+<P> Sipper, M. (1997) "Evolving Uniform and Non-uniform Cellular Automata Networks", in Annual
+Reviews of Computational Physics, D. Stauffer (ed)
+<P>
+<HR><a name=hardware>
+
+<H2><A NAME="Evolvable Hardware">
+Evolvable Hardware</A></H2>
+<P> The idea of evolving machines, whose origins can be traced to the cybernetics movement of the
+1940s and the 1950s, has recently resurged in the form of the nascent field of bio-inspired systems
+and evolvable hardware. The field draws on ideas from the
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY COMPUTATION">EVOLUTIONARY COMPUTATION</A></font>
+domain as well as on novel hardware innovations. Recently, the term <I>evolware</I> has been
+used to describe such evolving ware, with current implementations centering on hardware, while
+raising the possibility of using other forms in the future, such as bioware.  The inaugural
+workshop, <I>Towards Evolvable Hardware,</I> took place in Lausanne, in October 1995, followed
+by the <I>First International Conference on Evolvable Systems:</I> <I>From Biology to Hardware
+(ICES96)</I> held in Japan, in October 1996. Another major event in the field, ICES98, was held
+in Lausanne, Switzerland, in September 1998.
+<P> <B>References:</B>
+<P> Sipper, M. et al (1997) "A Phylogenetic, Ontogenetic, and Epigenetic View of Bio-Inspired
+Hardware Systems", IEEE Transactions on Evolutionary Computation, 1(1).
+<P> Sanchez, E. and Tomassini, M. (eds) (1996) "Towards Evolvable Hardware", Springer-Verlag,
+Lecture Notes in Computer Science, 1062.
+<P> Higuchi, T. et al (1997) "Proceedings of First International Conference on Evolvable Systems:
+From Biology to Hardware (ICES96)", Springer-Verlag, Lecture Notes in Computer Science.
+<P>
+<HR><a name=games>
+
+<H2><A NAME="GAME PLAYING">
+GAME PLAYING</A></H2>
+<font size=-1> <A href="Q99_G.htm#GA">GA</A>s</font>
+can be used to evolve behaviors for playing games. Work in evolutionary
+<font size=-1> <A href="Q99_G.htm#GAME THEORY">GAME THEORY</A></font>
+typically surrounds the
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A></font>
+of a
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+of players who meet randomly to play a game in which they each must adopt one of a limited number of
+moves. (Maynard-Smith 1982).  Let's suppose it is just two moves, X and Y. The players receive a
+reward, analogous to Darwinian
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A>,</font>
+depending on which combination of moves occurs and which move they adopted. In more complicated
+models there may be several players and several moves.
+<P> The players iterate such a game a series of times, and then move on to a new partner. At the end
+of all such moves, the players will have a cumulative payoff, their fitness.  This fitness can then
+be used to generate a new population.
+<P> The real key in using a GA is to come up with an encoding to represent player's strategies, one
+that is amenable to
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A></font>
+and to
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A>.</font>
+Possibilities are to suppose at each iteration a player adopts X with some probability (and Y with
+one minus such). A player can thus be represented as a real number, or a bit-string suitably
+interpreted as a probability
+<P> An alternative characterisation is to model the players as Finite State Machines, or Finite
+Automata (FA). These can be though of as a simple flow chart governing behaviour in the "next" play
+of the game depending upon previous plays. For example:
+<P>
+<PRE>
+
+     100 Play X
+     110 If opponent plays X go to 100
+     120 Play Y
+     130 If opponent plays X go to 100 else go to 120
+</PRE>
+
+represents a strategy that does whatever its opponent did last, and begins by playing X, known as
+"Tit-For-Tat." (Axelrod 1982). Such machines can readily be encoded as bit-strings. Consider the
+encoding "1 0 1 0 0 1" to represent TFT.  The first three bits, "1 0 1" are state 0. The first bit,
+"1" is interpreted as "Play X." The second bit, "0" is interpreted as "if opponent plays X go to
+state 1," the third bit, "1", is interpreted as "if the opponent plays Y, go to state 1."  State 1
+has a similar interpretation. Crossing over such bit-strings always yields valid strategies.
+<P>
+<font size=-1> <A href="Q99_S.htm#SIMULATION">SIMULATION</A>s</font>
+in the Prisoner's dilemma have been undertaken (Axelrod 1987, Fogel 1993, Miller 1989) of these
+machines.
+<P> Alternative representations of game players include
+<font size=-1> <A href="Q99_C.htm#CLASSIFIER SYSTEM">CLASSIFIER SYSTEM</A>s</font>
+(Marimon, McGrattan and Sargent 1990, <A href="Q10_2.htm#:GOLD89">[GOLD89]</a>), and Neural-networks
+(Fogel and Harrald 1994), though not necessarily with a GA.  (Fogel 1993), and Fogel and Harrald
+1994 use an Evolutionary Program).  Chellapilla and Fogel (1999) have evolved a neural network which
+can play checkers (draughts) at near expert level.
+<P> Other methods of evolving a population can be found in Lindgren 1991, Glance and Huberman 1993
+and elsewhere.
+<P> A GA for playing the game "Mastermind" has been produced. See
+<A href="http://kal-el.ugr.es/mastermind" >http://kal-el.ugr.es/mastermind</A>
+<P> <B>References.</B>
+<P> Axelrod, R. (1987) ``The Evolution of Strategies in the Repeated Prisoner's Dilemma,'' in <A
+href="Q10_2.htm#:DAVIS91">[DAVIS91]</a>
+<P> Axelrod, R (?) ``The Complexity of Cooperation'' (See the web site, which includes code to
+implement tournaments:
+<A href="http://pscs.physics.lsa.umich.edu/Software/ComplexCoop.html"
+>http://pscs.physics.lsa.umich.edu/Software/ComplexCoop.html</A> )
+<P> Chellapilla, K. and Fogel, D.B. (1999) ``Evolution, neural networks, games, and intelligence'' ,
+Proc. IEEE, Sept., pp. 1471-1496.
+<P> Miller, J.H. (1989) ``The Coevolution of Automata in the Repeated Prisoner's Dilemma'' Santa Fe
+Institute Working Paper 89-003.
+<P> Marimon, Ramon, Ellen McGrattan and Thomas J. Sargent (1990) ``Money as a Medium of Exchange in
+an Economy with Artificially Intelligent Agents'' Journal of Economic Dynamics and Control 14, pp.
+329--373.
+<P> Maynard-Smith, (1982) Evolution and the Theory of Games, CUP.
+<P> Lindgren, K. (1991) ``Evolutionary Phenomena in Simple Dynamics,'' in <A
+href="Q12.htm#:ALIFEI">[ALIFEI]</a>.
+<P> Holland, J.H and John Miller (1990) ``Artificially Adaptive Agents in Economic Theory,''
+American Economic Review: Papers and Proceedings of the 103rd Annual Meeting of the American
+Economics Association: 365--370.
+<P> Huberman, Bernado, and Natalie S. Glance (1993) "Diversity and Collective Action" in H. Haken
+and A. Mikhailov (eds.)  Interdisciplinary Approaches to Nonlinear Systems, Springer.
+<P> Fogel (1993) "Evolving Behavior in the Iterated Prisoner's Dilemma" Evolutionary Computation
+1:1, 77-97
+<P> Fogel, D.B. and Harrald, P. (1994) ``Evolving Complex Behaviour in the Iterated Prisoner's
+Dilemma,'' Proceedings of the Fourth Annual Meetings of the Evolutionary Programming Society, L.J.
+Fogel and A.W. Sebald eds., World Science Press.
+<P> Lindgren, K. and Nordahl, M.G.  "Cooperation and Community Structure in Artificial Ecosystems",
+Artificial Life, vol 1:1&amp;2, 15-38
+<P> Stanley, E.A., Ashlock, D. and Tesfatsion, L. (1994) "Iterated Prisoners Dilemma with Choice and
+Refusal of Partners in <A href="Q12.htm#:ALIFEIII">[ALIFEIII]</a> 131-178
+<P>
+<HR><a name=jss>
+
+<H2><A NAME="JOB-SHOP SCHEDULING">
+JOB-SHOP SCHEDULING</A></H2>
+<P> The Job-Shop Scheduling Problem (JSSP) is a very difficult NP-complete problem which, so far,
+seems best addressed by sophisticated branch and bound search techniques.
+<font size=-1> <A href="Q99_G.htm#GA">GA</A></font>
+researchers, however, are continuing to make progress on it.  (Davis 85) started off GA research on
+the JSSP, (Whitley 89) reports on using the edge
+<font size=-1> <A href="Q99_R.htm#RECOMBINATION">RECOMBINATION</A></font>
+operator (designed initially for the
+<font size=-1> <A href="Q99_T.htm#TSP">TSP</A>)</font>
+on JSSPs too. More recent work includes (Nakano 91),(Yamada &amp; Nakano 92), (Fang et al. 93).  The
+latter three report increasingly better results on using GAs on fairly large benchmark JSSPs (from
+Muth &amp; Thompson 63); neither consistently outperform branch &amp; bound search yet, but seem
+well on the way. A crucial aspect of such work (as with any GA application) is the method used to
+encode schedules. An important aspect of some of the recent work on this is that better results have
+been obtained by rejecting the conventional wisdom of using binary representations (as in (Nakano
+91)) in favor of more direct encodings. In (Yamada &amp; Nakano 92), for example, a
+<font size=-1> <A href="Q99_G.htm#GENOME">GENOME</A></font>
+directly encodes operation completion times, while in (Fang et al. 93) genomes represent implicit
+instructions for building a schedule. The success of these latter techniques, especially since their
+applications are very important in industry, should eventually spawn advances in GA theory.
+<P> Concerning the point of using GAs at all on hard job-shop scheduling problems, the same goes
+here as suggested above for `Timetabling': The GA approach enables relatively arbitrary constraints
+and objectives to be incorporated painlessly into a single
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+method. It is unlikely that GAs will outperform specialized knowledge-based and/or conventional OR-
+based approaches to such problems in terms of raw solution quality, however GAs offer much greater
+simplicity and flexibility, and so, for example, may be the best method for quick high-quality
+solutions, rather than finding the best possible solution at any cost. Also, of course, hybrid
+methods will have a lot to offer, and GAs are far easier to parallelize than typical knowledge-
+based/OR methods.
+<P> Similar to the JSSP is the Open Shop Scheduling Problem (OSSP).  (Fang et al. 93) reports an
+initial attempt at using GAs for this.  Ongoing results from the same source shows reliable
+achievement of results within less than 0.23% of optimal on moderately large OSSPs (so far, up to
+20x20), including an improvement on the previously best known solution for a benchmark 10x10 OSSP. A
+simpler form of job shop problem is the Flow-Shop Sequencing problem; recent successful work on
+applying GAs to this includes (Reeves 93)."
+<P> <B>Other scheduling problems</B>
+<P> In contrast to job shop scheduling some maintenance scheduling problems consider which
+activities to schedule within a planned maintenance period, rather than seeking to minimise the
+total time taken by the activities. The constraints on which parts may be taken out of service for
+maintenance at particular times may be very complex, particularly as they will in general interact.
+Some initial work is given in (Langdon, 1995).
+<P> <B>References</B>
+<P> Davis, L. (1985) "Job-Shop Scheduling with Genetic Algorithms", <A
+href="Q12.htm#:ICGA85">[ICGA85]</a>, 136-140.
+<P> Muth, J.F. &amp; Thompson, G.L. (1963) "Industrial Scheduling". Prentice Hall, Englewood Cliffs,
+NJ, 1963.
+<P> Nakano, R. (1991) "Conventional Genetic Algorithms for Job-Shop Problems", <A
+href="Q12.htm#:ICGA91">[ICGA91]</a>, 474-479.
+<P> Reeves, C.R. (1993) "A Genetic Algorithm for Flowshop Sequencing", Coventry Polytechnic Working
+Paper, Coventry, UK.
+<P> Whitley, D., Starkweather, T. &amp; D'Ann Fuquay (1989) "Scheduling Problems and Traveling
+Salesmen: The Genetic Edge Recombination Operator", <A href="Q12.htm#:ICGA89">[ICGA89]</a>, 133-140.
+<P> Fang, H.-L., Ross, P., &amp; Corne D. (1993) "A Promising Genetic Algorithm Approach to Job-Shop
+Scheduling, Rescheduling &amp; Open-Shop Scheduling Problems", <A
+href="Q12.htm#:ICGA93">[ICGA93]</a>, 375-382.
+<P> Yamada, T. &amp; Nakano, R. (1992) "A Genetic Algorithm Applicable to Large-Scale Job-Shop
+Problems", <A href="Q12.htm#:PPSN92">[PPSN92]</a>, 281-290.
+<P> Langdon, W.B. (1995) "Scheduling Planned Maintenance of the (UK) National Grid",
+<A href="ftp://cs.ucl.ac.uk/genetic/papers/grid_aisb-95.ps"
+>ftp://cs.ucl.ac.uk/genetic/papers/grid_aisb-95.ps</A>
+<P>
+<HR><a name=management>
+
+<H2><A NAME="MANAGEMENT SCIENCES">
+MANAGEMENT SCIENCES</A></H2>
+<P> "Applications of
+<font size=-1> <A href="Q99_E.htm#EA">EA</A></font>
+in management science and closely related fields like organizational ecology is a domain that has
+been covered by some EA researchers - with considerable bias towards scheduling problems.  Since I
+believe that EA have considerable potential for applications outside the rather narrow domain of
+scheduling and related combinatorial problems, I started collecting references about the status quo
+of EA-applications in management science.  This report intends to make available my findings to
+other researchers in the field. It is a short overview and lists some 230 references to current as
+well as finished research projects.  [..]
+<P> "At the end of the paper, a questionnaire has been incorporated that may be used for this
+purpose. Other comments are also appreciated."
+<P> --- from the Introduction of (Nissen 93)
+<P> <B>References</B>
+<P> Nissen, V. (1993) "Evolutionary Algorithms in Management Science: An Overview and List of
+References", Papers on Economics and Evolution, edited by the European Study Group for Evolutionary
+Economics.  This report is also avail. via anon.
+<font size=-1> <A href="Q99_F.htm#FTP">FTP</A></font>
+from
+<A href="ftp://ftp.gwdg.de/pub/msdos/reports/wi/earef.eps"
+>ftp://ftp.gwdg.de/pub/msdos/reports/wi/earef.eps</A>
+<P> Boulding, K.E. (1991) "What is evolutionary economics?", Journal of Evolutionary Economics, 1,
+9-17.
+<P>
+<HR><a name=filter>
+
+
+<H2><A NAME="NON-LINEAR FILTERING">
+NON-LINEAR FILTERING</A></H2>
+<P> New connections between
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A>s</font>
+and Non Linear Filtering Theory have been established.
+<font size=-1> <A href="Q99_G.htm#GA">GA</A>s</font>
+have already been successfully applied to a large class of non-linear filtering problems such as
+RADAR / SONAR/
+<font size=-1> <A href="Q99_G.htm#GPS">GPS</A></font>
+signal processing.  This relatively new branch of GA application has also lead to new results on the
+convergence of GAs: large deviations, fluctuations...
+<P> Some preprints and references on this topic are available in the web page:
+<A href="http://www-sv.cict.fr/lsp/Delmoral/index.html" >http://www-
+sv.cict.fr/lsp/Delmoral/index.html</A>
+<P> The new results also points out some natural connections between: genetic type algorithms,
+information theory, non-linear filtering theory, interacting and branching particle systems.
+<P>
+<HR><a name=timetabling>
+
+<H2><A NAME="TIMETABLING">
+TIMETABLING</A></H2>
+<P> This has been addressed quite successfully with
+<font size=-1> <A href="Q99_G.htm#GA">GA</A>s.</font>
+A very common manifestation of this kind of problem is the timetabling of exams or classes in
+Universities, etc.
+<P> The first application of GAs to the timetabling problem was to build the schedule of the
+teachers in an Italian high school.  The research, conducted at the Department of Electronics and
+Information of Politecnico di Milano, Italy, showed that a GA was as good as Tabu Search, and better
+than simulated annealing, at finding teacher schedules satisfying a number of hard and soft
+constraints.  The software package developed is now in current use in some high schools in Milano.
+(Colorni et al 1990)
+<P> At the Department of Artificial Intelligence, University of Edinburgh, timetabling the MSc exams
+is now done using a GA (Corne et al. 93, Fang 92). An example of the use of GAs for timetabling
+classes is (Abramson &amp; Abela 1991).
+<P> In the exam timetabling case, the
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+function for a
+<font size=-1> <A href="Q99_G.htm#GENOME">GENOME</A></font>
+representing a timetable involves computing degrees of punishment for various problems with the
+timetable, such as clashes, instances of students having to take consecutive exams, instances of
+students having (eg) three or more exams in one day, the degree to which heavily-subscribed exams
+occur late in the timetable (which makes marking harder), overall length of timetable, etc. The
+modular nature of the fitness function has the key to the main potential strength of using GAs for
+this sort of thing as opposed to using conventional search and/or constraint programming methods.
+The power of the GA approach is the ease with which it can handle arbitrary kinds of constraints and
+objectives; all such things can be handled as weighted components of the fitness function, making it
+easy to adapt the GA to the particular requirements of a very wide range of possible overall
+objectives . Very few other timetabling methods, for example, deal with such objectives at all,
+which shows how difficult it is (without GAs) to graft the capacity to handle arbitrary objectives
+onto the basic "find shortest- length timetable with no clashes" requirement. The proper way to
+weight/handle different objectives in the fitness function in relation to the general GA dynamics
+remains, however, an important research problem!
+<P> GAs thus offer a combination of simplicity, flexibility &amp; speed which competes very
+favorably with other approaches, but are unlikely to outperform knowledge-based (etc) methods if the
+best possible solution is required at any cost. Even then, however, hybridisation may yield the best
+of both worlds; also, the ease (if the hardware is available!)  of implementing GAs in parallel
+enhances the possibility of using them for good, fast solutions to very hard timetabling and similar
+problems.
+<P> <B>References</B>
+<P> Abramson &amp; Abela (1991) "A Parallel Genetic Algorithm for Solving the School Timetabling
+Problem", Technical Report, Division of I.T., C.S.I.R.O, April 1991.  (Division of Information
+Technology, C.S.I.R.O., c/o Dept. of Communication &amp; Electronic Engineering, Royal Melbourne
+Institute of Technology, PO BOX 2476V, Melbourne 3001, Australia)
+<P> Colorni A., M. Dorigo &amp; V. Maniezzo (1990).  Genetic Algorithms And Highly Constrained
+Problems: The Time-Table Case. Proceedings of the First International Workshop on Parallel Problem
+Solving from Nature, Dortmund, Germany, Lecture Notes in Computer Science 496, Springer-Verlag,
+55-59.
+<A href="http://iridia.ulb.ac.be/dorigo/dorigo/conferences/IC.01-PPSN1.ps.gz"
+>http://iridia.ulb.ac.be/dorigo/dorigo/conferences/IC.01-PPSN1.ps.gz</A>
+<P> Colorni A., M. Dorigo &amp; V. Maniezzo (1990).  Genetic Algorithms: A New Approach to the Time-
+Table Problem. NATO ASI Series, Vol.F 82,
+<font size=-1> <A href="Q99_C.htm#COMBINATORIAL OPTIMIZATION">COMBINATORIAL OPTIMIZATION</A>,</font>
+(Ed. M.Akguel and others), Springer-Verlag, 235-239.
+<A href="http://iridia.ulb.ac.be/dorigo/dorigo/conferences/IC.02-NATOASI90.ps.gz"
+>http://iridia.ulb.ac.be/dorigo/dorigo/conferences/IC.02-NATOASI90.ps.gz</A>
+<P> Colorni A., M. Dorigo &amp; V. Maniezzo (1990).  A Genetic Algorithm to Solve the Timetable
+Problem.  Technical Report No. 90-060, Politecnico di Milano, Italy.
+<A href="http://iridia.ulb.ac.be/dorigo/dorigo/tec.reps/TR.01-TTP.ps.gz"
+>http://iridia.ulb.ac.be/dorigo/dorigo/tec.reps/TR.01-TTP.ps.gz</A>
+<P> Corne, D. Fang, H.-L. &amp; Mellish, C. (1993) "Solving the Modular Exam Scheduling Problem with
+Genetic Algorithms".  Proc. of 6th Int'l Conf. on Industrial and Engineering Applications of
+Artificial Intelligence &amp; Expert Systems, ISAI.
+<P> Fang, H.-L. (1992) "Investigating GAs for scheduling", MSc Dissertation, University of Edinburgh
+Dept. of Artificial Intelligence, Edinburgh, UK.
+<P>
+<HR><P><center><A href="Q1_5.htm">[Previous question]</A>
+<A href="Q3.htm">[Next question]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

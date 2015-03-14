@@ -1,0 +1,66 @@
+<HTML><HEAD> <TITLE> PARAGenesis - Hitch-Hiker's Guide to Evolutionary Computation</TITLE>
+</HEAD><BODY>
+<P>
+
+<H2><A NAME="PARAGenesis:">
+PARAGenesis:</A></H2>
+<P> PARAGenesis is the result of a project implementing  Genesis on the CM-200 in C*. It is an
+attempt to improve
+<font size=-1> <A href="Q99_P.htm#PERFORMANCE">PERFORMANCE</A></font>
+as much as possible without changing the behavior of the
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A>.</font>
+Unlike the punctuated equilibria and local
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A></font>
+models, PARAGenesis doesn't modify the genetic algorithm to be more parallelizable as these
+modifications can drastically alter the behavior of the algorithm. Instead each member is placed on
+a separate processor allowing initialization, evaluation and
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A></font>
+to be completely parallel. The costs of global control and communication in selection and
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A></font>
+are present but minimized as much as possible. In general PARAGenesis on an 8k CM-200 seems to run
+10-100 times faster than Genesis on a Sparc 2 and finds equivalent solutions.
+<P> PARAGenesis includes all the features of serial Genesis plus some additions. The additions
+include the ability to collect timing
+<font size=-1> <A href="Q99_S.htm#STATISTICS">STATISTICS</A>,</font>
+probabilistic selection (as opposed to Baker's stochastic universal sampling), uniform crossover and
+local or neighborhood selection.  Anyone familiar with the serial implementation of Genesis and C*
+should have little problem using PARAGenesis.
+<P> PARAGenesis is available by
+<font size=-1> <A href="Q99_F.htm#FTP">FTP</A></font>
+from
+<A href="ftp://ftp.aic.nrl.navy.mil/pub/galist/src/ga/paragenesis.tar.Z"
+>ftp://ftp.aic.nrl.navy.mil/pub/galist/src/ga/paragenesis.tar.Z</A>
+<P> DISCLAIMER: PARAGenesis is fairly untested at this point and may contain some bugs.
+<P> Michael van Lent, Advanced Technology Lab, University of Michigan, 1101 Beal Av., Ann Arbor, MI
+48109, USA.  Net: <A href="mailto:vanlent@eecs.umich.edu">&lt;vanlent@eecs.umich.edu&gt;</A>.
+<P><HR><center>
+<A href="Q20.htm#table">[Software Survey]</A>
+<A href="Q20_3.htm">[Research Projects]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

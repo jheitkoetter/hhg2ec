@@ -1,0 +1,132 @@
+<HTML><HEAD> <TITLE> Glossary N - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<H2>Evolutionary Computation Glossary</H2>
+<A href="Q99_M.htm">Go to entries beginning with M</A><P>
+
+<H2><A NAME="N">
+N</A></H2>
+
+<P>
+<H3><A NAME= "NFL" > NFL:</A></H3> See
+<font size=-1> <A href="Q99_N.htm#NO FREE LUNCH">NO FREE LUNCH</A>.</font>
+
+<P>
+<H3><A NAME= "NICHE" > NICHE:</A></H3> (biol) In natural ecosystems, there are many different ways
+in which animals may survive (grazing, hunting, on the ground, in trees, etc.), and each survival
+strategy is called an "ecological niche."
+<font size=-1> <A href="Q99_S.htm#SPECIES">SPECIES</A></font>
+which occupy different
+<font size=-1> <A href="Q99_N.htm#NICHE">NICHE</A>s</font>
+(e.g. one eating plants, the other eating insects) may coexist side by side without competition, in
+a stable way. But if two species occupying the <I>same</I> niche are brought into the same area,
+there will be competition, and eventually the weaker of the two species will be made (locally)
+extinct. Hence diversity of species depends on them occupying a diversity of niches (or on
+geographical separation).
+
+<P>
+
+<font size=-1> (<A href="Q99_E.htm#EC">EC</A>)</font>
+In EC, we often want to maintain diversity in the
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A>.</font>
+Sometimes a
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+function may be known to be multimodal, and we want to locate all the peaks. We may consider each
+peak in the fitness function as analogous to a niche. By applying techniques such as fitness sharing
+(Goldberg &amp; Richardson, <A href="Q12.htm#:ICGA87">[ICGA87]</a>), the population can be prevented
+from converging on a single peak, and instead stable
+<font size=-1> <A href="Q99_S.htm#SUB-POPULATION">SUB-POPULATION</A>s</font>
+form at each peak. This is analogous to different species occupying different niches. See also
+<font size=-1> <A href="Q99_S.htm#SPECIES">SPECIES</A>,</font>
+<font size=-1> <A href="Q99_S.htm#SPECIATION">SPECIATION</A>.</font>
+
+<P>
+<H3><A NAME= "NO FREE LUNCH" > NO FREE LUNCH:</A></H3> <I>Cocktail party definition:</I>
+<P> For any pair of search algorithms, there are "as many" problems for which the first algorithm
+outperforms the second as for which the reverse is true. One consequence of this is that if we don't
+put any domain knowledge into our algorithm, it is as likely to perform <I>worse</I> than
+random search as it is likely to perform better.  This is true for all algorimths including
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A>s.</font>
+<P> <I>More detailed description:</I>
+<P> The
+<font size=-1> <A href="Q99_N.htm#NFL">NFL</A></font>
+work of Wolpert and Macready is a framework that addresses the core aspects of search, focusing on
+the connection between
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+functions and effective search algorithms. The central importance of this connection is demonstrated
+by the <I>No Free Lunch</I> theorem which states that averaged over all problems, all search
+algorithms perform equally. This result implies that if we are comparing a genetic algorithm to some
+other algorithm (e.g., simulated annealing, or even random search) and the genetic algorithm
+performs better on some class of problems, then the other algorithm necessarily performs better on
+problems outside the class. Thus it is essential to incorporate knowledge of the problem into the
+search algorithm.
+<P> The NFL framework also does the following: it provides a geometric interpretation of what it
+means for an algorithm to be well matched to a problem; it provides information theoretic insight
+into the search procedure; it investigates time-varying fitness functions; it proves that
+<I>independent of the fitness function,</I> one cannot (without prior domain knowledge)
+successfully choose between two algorithms based on their previous behavior; it provides a number of
+formal measures of how well an algorithm performs; and it addresses the difficulty of
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+problems from a viewpoint outside of traditional computational complexity.
+
+<P>
+<H3><A NAME= "NORMALLY DISTRIBUTED" > NORMALLY DISTRIBUTED:</A></H3> A random variable is
+<font size=-1> <A href="Q99_N.htm#NORMALLY DISTRIBUTED">NORMALLY DISTRIBUTED</A></font>
+if its density function is described as
+<BR> f(x) = 1/sqrt(2*pi*sqr(sigma)) * exp(-0.5*(x-mu)*(x-mu)/sqr(sigma))
+<BR> where mu is the mean of the random variable x and sigma is the
+<font size=-1> <A href="Q99_S.htm#STANDARD DEVIATION">STANDARD DEVIATION</A>.</font>
+<P><A href="Q99_O.htm">Go to entries beginning with O</A><P>
+<P><HR><P><center>
+Go to entries beginning with:
+<A href="Q99_1.htm">1</A>,
+<A href="Q99_A.htm">A</A>,
+<A href="Q99_B.htm">B</A>,
+<A href="Q99_C.htm">C</A>,
+<A href="Q99_D.htm">D</A>,
+<A href="Q99_E.htm">E</A>,
+<A href="Q99_F.htm">F</A>,
+<A href="Q99_G.htm">G</A>,
+<A href="Q99_H.htm">H</A>,
+<A href="Q99_I.htm">I</A>,
+<A href="Q99_L.htm">L</A>,
+<A href="Q99_M.htm">M</A>,
+<A href="Q99_N.htm">N</A>,
+<A href="Q99_O.htm">O</A>,
+<A href="Q99_P.htm">P</A>,
+<A href="Q99_R.htm">R</A>,
+<A href="Q99_S.htm">S</A>,
+<A href="Q99_T.htm">T</A>,
+<A href="Q99_U.htm">U</A>,
+<A href="Q99_V.htm">V</A>,
+<A href="Q99_Z.htm">Z</A>.
+<P><A href="Q99.htm">[Glossary top level]</A>
+
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

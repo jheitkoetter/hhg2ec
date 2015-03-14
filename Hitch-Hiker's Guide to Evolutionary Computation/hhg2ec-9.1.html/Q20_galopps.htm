@@ -1,0 +1,132 @@
+<HTML><HEAD> <TITLE> GALOPPS - Hitch-Hiker's Guide to Evolutionary Computation</TITLE>
+</HEAD><BODY>
+<P>
+
+<H2><A NAME="GALOPPS:">
+GALOPPS:</A></H2>
+<P> GALOPPS (Genetic Algorithm Optimized for Portability and Parallelism) is a general-purpose
+parallel
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A></font>
+system, written in 'C', organized like Goldberg's "Simple Genetic Algorithm".  User defines
+objective function (in template furnished) and any callback functions desired (again, filling in
+template); can run one or many subpopulations, on one or many PC's, workstations, Mac's, MPP.  Runs
+interactively (GUI or answering questions) or from files, makes file and/or graphical output.  Runs
+easily interrupted and restarted, and a PVM version for Unix networks even moves processes
+automatically when workstations become busy.  (Note: optional GUI requires Tcl/Tk.)  14 example
+problems included (De Jong Functions, Royal Road, BTSP, etc.  )
+<P> User may choose:
+
+<UL>  <P> <LI> problem type (permutation or value-type)
+
+<P>   <LI> field sizes (arbitrary, possibly unequal, heeded by
+      <font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A>,</font>
+      <font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A>)</font>
+
+<P>   <LI> among 7 crossover types and 4 mutation types (or define own)
+
+<P>   <LI> among 6
+      <font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A></font>
+      types, including "automatic" option based on Boltzmann scaling and Shapiro and Pruegel-Bennett
+      statist. Mechanics stuff
+
+<P>   <LI> operator probabilities,
+      <font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+      scaling, amount of output,
+      <font size=-1> <A href="Q99_M.htm#MIGRATION">MIGRATION</A></font>
+      frequency and patterns,
+
+<P>   <LI> stopping criteria (using "standard" convergence
+      <font size=-1> <A href="Q99_S.htm#STATISTICS">STATISTICS</A>,</font>
+      etc.)
+
+<P>   <LI> the GGA (Grouping Genetic Algorithm)
+      <font size=-1> <A href="Q99_R.htm#REPRODUCTION">REPRODUCTION</A></font>
+      and operators of Falkenauer
+</UL>
+<P> GALOPPS allows and supports:
+
+<UL>  <P> <LI> use of a different representation in each subpopulation, with transformation of
+      migrants
+
+<P>   <LI>
+      <font size=-1> <A href="Q99_I.htm#INVERSION">INVERSION</A></font>
+      on level of subpopulations, with automatic handling of differing field sizes, migrants
+
+<P>   <LI> control over replacement by
+      <font size=-1> <A href="Q99_O.htm#OFFSPRING">OFFSPRING</A>,</font>
+      including DeJong crowding or random replacement or SGA-like replacement of
+      <font size=-1> <A href="Q99_P.htm#PARENT">PARENT</A>s</font>
+
+<P>   <LI> mate selection, using incest reduction
+
+<P>   <LI> migrant selection, using incest reduction, and/or DeJong crowding into receiving
+      subpopulation
+
+<P>   <LI> optional
+      <font size=-1> <A href="Q99_E.htm#ELITISM">ELITISM</A></font>
+</UL>
+<P> Generic (Unix) GALOPPS 3.2 (includes 80-pp. manual) is available on
+<font size=-1> <A href="Q99_E.htm#ENCORE">ENCORE</A>.</font>
+For PVM GALOPPS, PC version (different line endings, makefiles), Threaded GALOPPS, and GALOPPS-based
+2-level adaptive system, see the MSU GARAGe web site:
+<A href="http://GARAGe.cps.msu.edu/" >http://GARAGe.cps.msu.edu/</A> .
+<P> Contact: Erik D. Goodman, <A href="mailto:goodman@egr.msu.edu">&lt;goodman@egr.msu.edu&gt;</A>, MSU GARAGe, Case Center, 112 Engineering
+Building, MSU, East Lansing, MI 48824 USA.
+<P>
+<P><HR><center>
+<A href="Q20.htm#table">[Software Survey]</A>
+<A href="Q20_3.htm">[Research Projects]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

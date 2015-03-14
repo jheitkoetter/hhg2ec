@@ -1,0 +1,198 @@
+<HTML><HEAD> <TITLE> Q1 - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H1><A href=Q1.htm>Q1</A>: What are Evolutionary Algorithms (EAs)?</H1>
+<P>
+<P> <I>Evolutionary algorithm</I> is an umbrella term used to describe computer-based problem
+solving systems which use computational models of some of the known mechanisms of
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A></font>
+as key elements in their design and implementation. A variety of
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY ALGORITHM">EVOLUTIONARY ALGORITHM</A>s</font>
+have been proposed.  The major ones are:
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A>s</font>
+(see <A href=Q1_1.htm>Q1.1</A>),
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY PROGRAMMING">EVOLUTIONARY PROGRAMMING</A></font>
+(see <A href=Q1_2.htm>Q1.2</A>),
+<font size=-1> <A href="Q99_E.htm#EVOLUTION STRATEGIE">EVOLUTION STRATEGIE</A>s</font>
+(see <A href=Q1_3.htm>Q1.3</A>),
+<font size=-1> <A href="Q99_C.htm#CLASSIFIER SYSTEM">CLASSIFIER SYSTEM</A>s</font>
+(see <A href=Q1_4.htm>Q1.4</A>), and
+<font size=-1> <A href="Q99_G.htm#GENETIC PROGRAMMING">GENETIC PROGRAMMING</A></font>
+(see <A href=Q1_5.htm>Q1.5</A>). They all share a common conceptual base of simulating the evolution of
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A></font>
+structures via processes of
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A>,</font>
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A>,</font>
+and
+<font size=-1> <A href="Q99_R.htm#REPRODUCTION">REPRODUCTION</A>.</font>
+The processes depend on the perceived
+<font size=-1> <A href="Q99_P.htm#PERFORMANCE">PERFORMANCE</A></font>
+of the individual structures as defined by an
+<font size=-1> <A href="Q99_E.htm#ENVIRONMENT">ENVIRONMENT</A>.</font>
+<P> More precisely,
+<font size=-1> <A href="Q99_E.htm#EA">EA</A>s</font>
+maintain a
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+of structures, that evolve according to rules of selection and other operators, that are referred to
+as "search operators", (or
+<font size=-1> <A href="Q99_G.htm#GENETIC OPERATOR">GENETIC OPERATOR</A>s),</font>
+such as
+<font size=-1> <A href="Q99_R.htm#RECOMBINATION">RECOMBINATION</A></font>
+and mutation. Each individual in the population receives a measure of its
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+in the environment. Reproduction focuses attention on high fitness individuals, thus exploiting (cf.
+<font size=-1> <A href="Q99_E.htm#EXPLOITATION">EXPLOITATION</A>)</font>
+the available fitness information.  Recombination and mutation perturb those individuals, providing
+general heuristics for
+<font size=-1> <A href="Q99_E.htm#EXPLORATION">EXPLORATION</A>.</font>
+Although simplistic from a biologist's viewpoint, these algorithms are sufficiently complex to
+provide robust and powerful adaptive search mechanisms.
+<P> --- "An Overview of Evolutionary Computation" <A href="Q12.htm#:ECML93">[ECML93]</a>, 442-459.
+<P>
+
+<H2><A NAME="BIOLOGICAL BASIS">
+BIOLOGICAL BASIS</A></H2>
+<P> To understand
+<font size=-1> <A href="Q99_E.htm#EA">EA</A>s,</font>
+it is necessary to have some appreciation of the biological processes on which they are based.
+<P> Firstly, we should note that
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A></font>
+(in nature or anywhere else) is not a purposive or directed process.  That is, there is no evidence
+to support the assertion that the goal of evolution is to produce Mankind. Indeed, the processes of
+nature seem to boil down to a haphazard
+<font size=-1> <A href="Q99_G.htm#GENERATION">GENERATION</A></font>
+of biologically diverse organisms.  Some of evolution is determined by natural
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A></font>
+or different
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+competing for resources in the
+<font size=-1> <A href="Q99_E.htm#ENVIRONMENT">ENVIRONMENT</A>.</font>
+Some are better than others. Those that are better are more likely to survive and propagate their
+genetic material.
+<P> In nature, we see that the encoding for genetic information
+<font size=-1> (<A href="Q99_G.htm#GENOME">GENOME</A>)</font>
+is done in a way that admits asexual
+<font size=-1> <A href="Q99_R.htm#REPRODUCTION">REPRODUCTION</A>.</font>
+Asexual reproduction typically results in
+<font size=-1> <A href="Q99_O.htm#OFFSPRING">OFFSPRING</A></font>
+that are genetically identical to the
+<font size=-1> <A href="Q99_P.htm#PARENT">PARENT</A>.</font>
+(Large numbers of organisms reproduce asexually; this includes most bacteria which some biologists
+hold to be the most successful
+<font size=-1> <A href="Q99_S.htm#SPECIES">SPECIES</A></font>
+known.)
+<P> Sexual reproduction allows some shuffing of
+<font size=-1> <A href="Q99_C.htm#CHROMOSOME">CHROMOSOME</A>s,</font>
+producing offspring that contain a combination of information from each parent.  At the molecular
+level what occurs <I>(wild oversimplification alert!)</I> is that a pair of almost identical
+chromosomes bump into one another, exchange chunks of genetic information and drift apart. This is
+the
+<font size=-1> <A href="Q99_R.htm#RECOMBINATION">RECOMBINATION</A></font>
+operation, which is often referred to as
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A></font>
+because of the way that biologists have observed strands of chromosomes crossing over during the
+exchange.
+<P> Recombination happens in an environment where the selection of who gets to mate is largely a
+function of the
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+of the individual, i.e. how good the individual is at competing in its environment. Some "luck"
+(random effect) is usually involved too. Some EAs use a simple function of the fitness measure to
+select individuals (probabilistically) to undergo genetic operations such as crossover or asexual
+reproduction (the propagation of genetic material unaltered).  This is fitness-proportionate
+selection.  Other implementations use a model in which certain randomly selected individuals in a
+subgroup compete and the fittest is selected. This is called tournament selection and is the form of
+selection we see in nature when stags rut to vie for the privilege of mating with a herd of hinds.
+<P> Much EA research has assumed that the two processes that most contribute to evolution are
+crossover and fitness based selection/reproduction.  Evolution, by definition, absolutely requires
+diversity in order to work.  In nature, an important source of diversity is
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A>.</font>
+In an EA, a large amount of diversity is usually introduced at the start of the algorithm, by
+randomising the
+<font size=-1> <A href="Q99_G.htm#GENE">GENE</A>s</font>
+in the
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A>.</font>
+The importance of mutation, which introduces further diversity while the algorithm is running,
+therefore continues to be a matter of debate. Some refer to it as a background operator, simply
+replacing some of the original diversity which may have been lost, while others view it as playing
+the dominant role in the evolutionary process.
+<P> It cannot be stressed too strongly that an
+<font size=-1> <A href="Q99_E.htm#EVOLUTIONARY ALGORITHM">EVOLUTIONARY ALGORITHM</A></font>
+(as a
+<font size=-1> <A href="Q99_S.htm#SIMULATION">SIMULATION</A></font>
+of a genetic process) is not a random search for a solution to a problem (highly fit individual).
+EAs use stochastic processes, but the result is distinctly non-random (better than random).
+<P>
+
+<H2><A NAME="PSEUDO CODE">
+PSEUDO CODE</A></H2>
+<PRE>
+
+<B>Algorithm</B> EA <B>is</B>
+<P>
+<I>  // start with an initial time</I>
+     t := 0;
+<P>
+<I>  // initialize a usually random population of individuals</I>
+     initpopulation P (t);
+<P>
+<I>  // evaluate fitness of all initial individuals in population</I>
+     evaluate P (t);
+<P>
+<I>  // test for termination criterion (time, fitness, etc.)</I>
+     <B>while</B> not done <B>do</B>
+<P>
+<I>       // increase the time counter</I>
+	  t := t + 1;
+<P>
+<I>       // select sub-population for offspring production</I>
+	  P' := selectparents P (t);
+<P>
+<I>       // recombine the "genes" of selected parents</I>
+	  recombine P' (t);
+<P>
+<I>       // perturb the mated population stochastically</I>
+	  mutate P' (t);
+<P>
+<I>       // evaluate its new fitness</I>
+	  evaluate P' (t);
+<P>
+<I>       // select the survivors from actual fitness</I>
+	  P := survive P,P' (t);
+<B>  od</B>
+<B>end</B> EA.
+</PRE>
+
+<HR><P><center><A href="Q0.htm">[Previous question]</A>
+<A href="Q1_1.htm">[Next question]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

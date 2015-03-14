@@ -1,0 +1,264 @@
+<HTML><HEAD> <TITLE> Q1.3 - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H1><A href=Q1_3.htm>Q1.3</A>: What's an Evolution Strategy (ES)?</H1>
+<P>
+<P> In 1963 two students at the Technical University of Berlin (TUB) met and were soon to
+collaborate on experiments which used the wind tunnel of the Institute of Flow Engineering.  During
+the search for the optimal shapes of bodies in a flow, which was then a matter of laborious
+intuitive experimentation, the idea was conceived of proceeding strategically.  However, attempts
+with the <I>coordinate</I> and <I>simple gradient strategies</I> (cf <A href=Q5.htm>Q5</A>) were unsuccessful.  Then
+one of the students, <I>Ingo Rechenberg,</I> now Professor of Bionics and Evolutionary
+Engineering, hit upon the idea of trying random changes in the parameters defining the shape,
+following the example of natural
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A>s.</font>
+The
+<font size=-1> <A href="Q99_E.htm#EVOLUTION STRATEGY">EVOLUTION STRATEGY</A></font>
+was born.  A third student, <I>Peter Bienert,</I> joined them and started the construction of
+an automatic experimenter, which would work according to the simple rules of mutation and
+<font size=-1> <A href="Q99_S.htm#SELECTION">SELECTION</A>.</font>
+The second student, <I>Hans-Paul Schwefel,</I> set about testing the efficiency of the new
+methods with the help of a Zuse Z23 computer; for there were plenty of objections to these "random
+strategies."
+<P> In spite of an occasional lack of financial support, the Evolutionary Engineering Group which
+had been formed held firmly together. Ingo Rechenberg received his doctorate in 1970 (Rechenberg
+73).  It contains the theory of the two membered
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A></font>
+strategy and a first proposal for a multimembered strategy which in the nomenclature introduced here
+is of the (<I>m</I>+1) type.   In the same year financial support from the Deutsche
+Forschungsgemeinschaft (DFG, Germany's National Science Foundation) enabled the work, that was
+concluded, at least temporarily, in 1974 with the thesis "Evolutionsstrategie und numerische
+Optimierung" (Schwefel 77).
+<P> Thus,
+<font size=-1> <A href="Q99_E.htm#EVOLUTION STRATEGIE">EVOLUTION STRATEGIE</A>s</font>
+were invented to solve technical
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+problems (TOPs) like e.g. constructing an optimal flashing nozzle, and until recently
+<font size=-1> <A href="Q99_E.htm#ES">ES</A></font>
+were only known to civil engineering folks, as an alternative to standard solutions.  Usually no
+closed form analytical objective function is available for TOPs and hence, no applicable
+optimization method exists, but the engineer's intuition.
+<P> The first attempts to imitate principles of organic evolution on a computer still resembled the
+iterative optimization methods known up to that time (cf <A href=Q5.htm>Q5</A>):  In a two-membered or (1+1) ES, one
+<font size=-1> <A href="Q99_P.htm#PARENT">PARENT</A></font>
+generates one
+<font size=-1> <A href="Q99_O.htm#OFFSPRING">OFFSPRING</A></font>
+per
+<font size=-1> <A href="Q99_G.htm#GENERATION">GENERATION</A></font>
+by applying
+<font size=-1> <A href="Q99_N.htm#NORMALLY DISTRIBUTED">NORMALLY DISTRIBUTED</A></font>
+mutations, i.e. smaller steps occur more likely than big ones, until a child performs better than
+its ancestor and takes its place. Because of this simple structure, theoretical results for
+<font size=-1> <A href="Q99_S.htm#STEPSIZE">STEPSIZE</A></font>
+control and
+<font size=-1> <A href="Q99_C.htm#CONVERGENCE VELOCITY">CONVERGENCE VELOCITY</A></font>
+could be derived. The ratio between successful and all mutations should come to 1/5: the so-called
+<font size=-1> <A href="Q99_1.htm#1/5 SUCCESS RULE">1/5 SUCCESS RULE</A></font>
+was discovered. This first algorithm, using mutation only, has then been enhanced to a (<I>m</I>+1)
+strategy which incorporated
+<font size=-1> <A href="Q99_R.htm#RECOMBINATION">RECOMBINATION</A></font>
+due to several, i.e. <I>m</I> parents being available. The mutation scheme and the exogenous
+stepsize control were taken across unchanged from  (1+1) ESs.
+<P> Schwefel later generalized these strategies to the multimembered ES now denoted by
+(<I>m</I>+<I>l</I>) and (<I>m,l</I>) which imitates the following basic principles of organic
+evolution: a
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A>,</font>
+leading to the possibility of recombination with random mating, mutation and selection. These
+strategies are termed
+<font size=-1> <A href="Q99_P.htm#PLUS STRATEGY">PLUS STRATEGY</A></font>
+and
+<font size=-1> <A href="Q99_C.htm#COMMA STRATEGY">COMMA STRATEGY</A>,</font>
+respectively: in the plus case, the parental generation is taken into account during selection,
+while in the comma case only the offspring undergoes selection, and the parents die off. <I>m</I>
+(usually a lowercase <I>mu</I>, denotes the population size, and <I>l</I>, usually a lowercase
+<I>lambda</I> denotes the number of offspring generated per generation).  Or to put it in an utterly
+insignificant and hopelessly outdated language:
+<P>
+<PRE>
+
+     (<B>define</B> (Evolution-strategy population)
+       (<B>if</B> (terminate? population)
+	 population
+	 (evolution-strategy
+	   (select
+	     (<B>cond</B> (plus-strategy?
+		     (<B>union</B> (mutate
+			      (recombine population))
+			    population))
+		   (comma-strategy?
+		     (mutate
+		       (recombine population))))))))
+</PRE>
+
+<P> However, dealing with ES is sometimes seen as "strong tobacco," for it takes a decent amount of
+probability theory and applied
+<font size=-1> <A href="Q99_S.htm#STATISTICS">STATISTICS</A></font>
+to understand the inner workings of an ES, while it navigates through the hyperspace of the usually
+n-dimensional problem space, by throwing hyperelipses into the deep...
+<P> Luckily, this medium doesn't allow for much mathematical ballyhoo; the author therefore has to
+come up with a simple but brilliantly intriguing explanation to save the reader from falling asleep
+during the rest of this section, so here we go:
+<P> Imagine a black box. A large black box. As large as, say for example, a Coca-Cola vending
+machine. Now, [..] (to be continued)
+<P> A single
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A></font>
+of the ES' population consists of the following
+<font size=-1> <A href="Q99_G.htm#GENOTYPE">GENOTYPE</A></font>
+representing a point in the
+<font size=-1> <A href="Q99_S.htm#SEARCH SPACE">SEARCH SPACE</A>:</font>
+
+<P>
+<font size=-1> <A href="Q99_O.htm#OBJECT VARIABLES">OBJECT VARIABLES</A></font>
+Real-valued x_i have to be tuned by recombination and mutation such that an objective function
+reaches its global optimum. Referring to the metaphor mentioned previously, the x_i represent the
+regulators of the alien Coka-Cola vending machine.
+
+<P>
+<font size=-1> <A href="Q99_S.htm#STRATEGY VARIABLE">STRATEGY VARIABLE</A>s</font>
+Real-valued s_i (usually denoted by a lowercase sigma) or mean stepsizes determine the mutability of
+the x_i. They represent the
+<font size=-1> <A href="Q99_S.htm#STANDARD DEVIATION">STANDARD DEVIATION</A></font>
+of a  (0, s_i)
+<font size=-1> <A href="Q99_G.htm#GAUSSIAN DISTRIBUTION">GAUSSIAN DISTRIBUTION</A></font>
+(GD) being added to each x_i as an undirected mutation.  With an "expectancy value" of 0 the parents
+will produce offspring similar to themselves on  average.  In order to make a doubling and a halving
+of a stepsize equally probable, the s_i mutate log-normally, distributed, i.e. exp(GD), from
+generation to generation.  These stepsizes hide the internal model the population has made of its
+<font size=-1> <A href="Q99_E.htm#ENVIRONMENT">ENVIRONMENT</A>,</font>
+i.e. a
+<font size=-1> <A href="Q99_S.htm#SELF-ADAPTATION">SELF-ADAPTATION</A></font>
+of the stepsizes has replaced the exogenous control of the (1+1) ES.
+<P> This concept works because selection sooner or later prefers those individuals having built a
+good model of the objective function, thus producing better offspring. Hence, learning takes place
+on two levels: (1) at the genotypic, i.e. the object and strategy variable level and (2) at the
+phenotypic level, i.e. the
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+level.
+<P> Depending on an individual's x_i, the resulting objective function value f(x), where x denotes
+the vector of objective variables, serves as the
+<font size=-1> <A href="Q99_P.htm#PHENOTYPE">PHENOTYPE</A></font>
+(fitness) in the selection step. In a plus strategy, the <I>m</I> best of all (<I>m+l</I>)
+individuals survive to become the parents of the next generation.  Using the comma variant,
+selection takes place only among the <I>l</I> offspring.  The second scheme is more realistic and
+therefore more successful, because no individual may survive forever, which could at least
+theoretically occur using the plus variant. Untypical for conventional optimization algorithms and
+lavish at first sight, a comma strategy allowing intermediate deterioration performs better! Only by
+<I>forgetting</I> highly fit individuals can a permanent adaptation of the stepsizes take
+place and avoid long stagnation phases due to misadapted s_i's.  This means that these individuals
+have built an internal model that is no longer appropriate for further progress, and thus should
+better be discarded.
+<P> By choosing a certain ratio <I>m/l</I>, one can determine the convergence property of the
+evolution strategy: If one wants a fast, but local convergence, one should choose a small
+<font size=-1> <A href="Q99_H.htm#HARD SELECTION">HARD SELECTION</A>,</font>
+ratio, e.g. (5,100), but looking for the global optimum, one should favour  a softer selection
+(15,100).
+<P> Self-adaptation within ESs depends on the following agents (Schwefel 87):
+
+<P>
+Randomness: One cannot model mutation as a purely random process. This would mean that a child is
+completely independent of its parents.
+
+<P>
+Population size: The population has to be sufficiently large. Not only the current best should be
+allowed to reproduce, but a set of good individuals.  Biologists have coined the term "requisite
+variety" to mean the genetic variety necessary to prevent a
+<font size=-1> <A href="Q99_S.htm#SPECIES">SPECIES</A></font>
+from becoming poorer and poorer genetically and eventually dying out.
+
+<P>
+<font size=-1> <A href="Q99_C.htm#COOPERATION">COOPERATION</A>:</font>
+In order to exploit the effects of a population (<I>m</I> &gt; 1), the individuals should recombine
+their knowledge with that of others (cooperate) because one cannot expect the knowledge to
+accumulate in the best individual only.
+
+<P>
+Deterioration: In order to allow better internal models (stepsizes) to provide better progress in
+the future, one should accept deterioration from one generation to the next. A limited life-span in
+nature is not a sign of failure, but an important means of preventing a species from freezing
+genetically.
+<P> ESs prove to be successful when compared to other iterative methods on a large number of test
+problems (Schwefel 77).  They are adaptable to nearly all sorts of problems in optimization, because
+they need very little information about the problem, especially no derivatives of the objective
+function. For a list of some 300 applications of
+<font size=-1> <A href="Q99_E.htm#EA">EA</A>s,</font>
+see the SyS-2/92 report (cf <A href=Q14.htm>Q14</A>).  ESs are capable of solving <I>high dimensional, multimodal,
+nonlinear problems</I> subject to <I>linear and/or nonlinear constraints.</I> The objective
+function can also, e.g. be the result of a
+<font size=-1> <A href="Q99_S.htm#SIMULATION">SIMULATION</A>,</font>
+it does not have to be given in a closed form.  This also holds for the constraints which may
+represent the outcome of, e.g. a finite elements method (FEM).  ESs have been adapted to
+<font size=-1> <A href="Q99_V.htm#VECTOR OPTIMIZATION">VECTOR OPTIMIZATION</A></font>
+problems (Kursawe 92), and they can also serve as a heuristic for NP-complete combinatorial problems
+like the
+<font size=-1> <A href="Q99_T.htm#TRAVELLING SALESMAN PROBLEM">TRAVELLING SALESMAN PROBLEM</A></font>
+or problems with a noisy or changing response surface.
+<P> <B>References</B>
+<P> Kursawe, F. (1992) " Evolution strategies for vector optimization", Taipei, National Chiao Tung
+University, 187-193.
+<P> Kursawe, F. (1994) " Evolution strategies: Simple models of natural processes?", Revue
+Internationale de Syst&euml;mique, France (to appear).
+<P> Rechenberg, I. (1973) "Evolutionsstrategie: Optimierung technischer Systeme nach Prinzipien der
+biologischen Evolution", Stuttgart: Fromman-Holzboog.
+<P> Schwefel, H.-P. (1977) "Numerische Optimierung von Computermodellen mittels der
+Evolutionsstrategie", Basel: Birkh&auml;user.
+<P> Schwefel, H.-P. (1987) "Collective Phaenomena in Evolutionary Systems", 31st Annu. Meet. Inter'l
+Soc. for General System Research, Budapest, 1025-1033.
+<P>
+<HR><P><center><A href="Q1_2.htm">[Previous question]</A>
+<A href="Q1_4.htm">[Next question]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

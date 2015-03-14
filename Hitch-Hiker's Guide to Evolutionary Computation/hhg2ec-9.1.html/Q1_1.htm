@@ -1,0 +1,132 @@
+<HTML><HEAD> <TITLE> Q1.1 - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H1><A href=Q1_1.htm>Q1.1</A>: What's a Genetic Algorithm (GA)?</H1>
+<P>
+<P> The
+<font size=-1> <A href="Q99_G.htm#GENETIC ALGORITHM">GENETIC ALGORITHM</A></font>
+is a model of machine learning which derives its behavior from a metaphor of some of the mechanisms
+of
+<font size=-1> <A href="Q99_E.htm#EVOLUTION">EVOLUTION</A></font>
+in nature. This is done by the creation within a machine of a
+<font size=-1> <A href="Q99_P.htm#POPULATION">POPULATION</A></font>
+of
+<font size=-1> <A href="Q99_I.htm#INDIVIDUAL">INDIVIDUAL</A>s</font>
+represented by
+<font size=-1> <A href="Q99_C.htm#CHROMOSOME">CHROMOSOME</A>s,</font>
+in essence a set of character strings that are analogous to the base-4 chromosomes that we see in
+our own
+<font size=-1> <A href="Q99_D.htm#DNA">DNA</A>.</font>
+The individuals in the population then go through a process of simulated "evolution".
+<P> Genetic algorithms are used for a number of different application areas. An example of this
+would be multidimensional
+<font size=-1> <A href="Q99_O.htm#OPTIMIZATION">OPTIMIZATION</A></font>
+problems in which the character string of the chromosome can be used to encode the values for the
+different parameters being optimized.
+<P> In practice, therefore, we can implement this genetic model of computation by having arrays of
+bits or characters to represent the chromosomes. Simple bit manipulation operations allow the
+implementation of
+<font size=-1> <A href="Q99_C.htm#CROSSOVER">CROSSOVER</A>,</font>
+<font size=-1> <A href="Q99_M.htm#MUTATION">MUTATION</A></font>
+and other operations. Although a substantial amount of research has been performed on variable-
+length strings and other structures, the majority of work with genetic algorithms is focussed on
+fixed-length character strings. We should focus on both this aspect of fixed-lengthness and the need
+to encode the representation of the solution being sought as a character string, since these are
+crucial aspects that distinguish
+<font size=-1> <A href="Q99_G.htm#GENETIC PROGRAMMING">GENETIC PROGRAMMING</A>,</font>
+which does not have a fixed length representation and there is typically no encoding of the problem.
+<P> When the genetic algorithm is implemented it is usually done in a manner that involves the
+following cycle:  Evaluate the
+<font size=-1> <A href="Q99_F.htm#FITNESS">FITNESS</A></font>
+of all of the individuals in the population.  Create a new population by performing operations such
+as crossover, fitness-proportionate
+<font size=-1> <A href="Q99_R.htm#REPRODUCTION">REPRODUCTION</A></font>
+and mutation on the individuals whose fitness has just been measured. Discard the old population and
+iterate using the new population.
+<P> One iteration of this loop is referred to as a
+<font size=-1> <A href="Q99_G.htm#GENERATION">GENERATION</A>.</font>
+There is no theoretical reason for this as an implementation model.  Indeed, we do not see this
+punctuated behavior in populations in nature as a whole, but it is a convenient implementation
+model.
+<P> The first generation (generation 0) of this process operates on a population of randomly
+generated individuals.  From there on, the genetic operations, in concert with the fitness measure,
+operate to improve the population.
+
+<H2><A NAME="PSEUDO CODE">
+PSEUDO CODE</A></H2>
+<PRE>
+
+<B>Algorithm</B> GA <B>is</B>
+<P>
+<I>  // start with an initial time</I>
+     t := 0;
+<P>
+<I>  // initialize a usually random population of individuals</I>
+     initpopulation P (t);
+<P>
+<I>  // evaluate fitness of all initial individuals of population</I>
+     evaluate P (t);
+<P>
+<I>  // test for termination criterion (time, fitness, etc.)</I>
+     <B>while</B> not done <B>do</B>
+<P>
+<I>       // increase the time counter</I>
+	  t := t + 1;
+<P>
+<I>       // select a sub-population for offspring production</I>
+	  P' := selectparents P (t);
+<P>
+<I>       // recombine the "genes" of selected parents</I>
+	  recombine P' (t);
+<P>
+<I>       // perturb the mated population stochastically</I>
+	  mutate P' (t);
+<P>
+<I>       // evaluate its new fitness</I>
+	  evaluate P' (t);
+<P>
+<I>       // select the survivors from actual fitness</I>
+	  P := survive P,P' (t);
+<B>  od</B>
+<B>end</B> GA.
+</PRE>
+
+<P>
+<HR><P><center><A href="Q1.htm">[Previous question]</A>
+<A href="Q1_2.htm">[Next question]</A>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

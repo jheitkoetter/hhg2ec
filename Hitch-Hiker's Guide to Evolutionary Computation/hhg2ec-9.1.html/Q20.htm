@@ -1,0 +1,660 @@
+<HTML><HEAD> <TITLE> Q20 - HHGT Evolutionary Computation</TITLE></HEAD><BODY>
+<P>
+
+<H1><A href=Q20.htm>Q20</A>: What EA software packages are available?</H1>
+<P>
+<P> This gives a list of all known
+<font size=-1> <A href="Q99_E.htm#EA">EA</A></font>
+software packages available to the public. The list was originally maintained by Nici Schraudolph.
+In June '93 it was agreed that it would be incorporated into this
+<font size=-1> <A href="Q99_F.htm#FAQ">FAQ</A></font>
+and the responsibility for maintenance taken over by the FAQ editor.
+<P> A copy of most of the packages described below are kept at
+<font size=-1> <A href="Q99_E.htm#ENCORE">ENCORE</A>,</font>
+(See <A href=Q15_3.htm>Q15.3</A>), available by anonymous
+<font size=-1> <A href="Q99_F.htm#FTP">FTP</A>.</font>
+<P> Most
+<font size=-1> <A href="Q99_G.htm#GENETIC PROGRAMMING">GENETIC PROGRAMMING</A></font>
+software is available by FTP in:
+<A href="ftp://ftp.io.com/pub/genetic-programming/" >ftp://ftp.io.com/pub/genetic-programming/</A>
+There are subdirectories containing papers related to
+<font size=-1> <A href="Q99_G.htm#GP">GP</A>,</font>
+archives of the mailing list, as well as a suite of programs for implementing GP.  These programs
+include the Lisp code from Koza's "Genetic Programming" <A href="Q10_2.htm#:KOZA92">[KOZA92]</a>, as
+well as implementations in C and C++, as for example SGPC: Simple Genetic Programming in C by Walter
+Alden Tackett and Aviram Carmi <A href="mailto:gpc@ipld01.hac.com">&lt;gpc@ipld01.hac.com&gt;</A>.
+<P> A survey paper entitled "Genetic Algorithm Programming Environments" was published in IEEE
+Computer in the June 1994 issue.  Written by Filho, Alippi and Treleaven of University College,
+London, UK. It's available by FTP as
+<A href="ftp://bells.cs.ucl.ac.uk/papagena/game/docs/gasurvey.ps"
+>ftp://bells.cs.ucl.ac.uk/papagena/game/docs/gasurvey.ps</A> (file size: 421k).
+<P>
+
+<H2><A NAME="PLEASE NOTE">
+PLEASE NOTE</A></H2>
+<P> <B>For many of these software packages, specific ordering instructions</B> <B>are given
+in the descriptions below (see</B> <B><A href=Q20_1.htm>Q20.1</A> - Free Software packages, <A href=Q20_2.htm>Q20.2</A> - Commercial
+Software Packages,</B> <B><A href=Q20_3.htm>Q20.3</A> - Research Projects).</B> <B>Please read and follow
+them</B> <B>before unnecessarily bothering the listed author or contact!</B> Also
+note that these programs haven't been independently tested, so there are no guarantees of their
+quality.
+<P> A major revision was undertaken in August 1994, when all authors were contacted, and asked to
+confirm the accuracy of the information contained here. A few authors did not respond to the request
+for information.  These are noted below by: (Unverified 8/94). In these cases,
+<font size=-1> <A href="Q99_F.htm#FTP">FTP</A></font>
+address were checked by the
+<font size=-1> <A href="Q99_F.htm#FAQ">FAQ</A></font>
+editor, to confirm that this information (at least) is correct. In two cases, email to the author
+bounced back as "undeliverable" -- these are noted below.
+
+<H2><A NAME="Legend">
+Legend</A></H2>
+
+<P>
+<B>Type</B> (this is a very ad-hoc classification)
+<PRE>
+
+     GE:  generational GA
+     SS:  steady-state GA
+     PA:  (pseudo) parallel GA
+     ES:  evolution strategy
+     OO:  object-oriented
+     XP:  expert system
+     ED:  educational/demo
+     CF:  classifier system
+</PRE>
+
+<P>
+<B>OS</B> Operating System; X11 implies Unix; "Win" means Microsoft Windows 3.x/NT (PC);
+"DOS" means MS-DOS or compatibles.
+
+<P>
+<B>Lang</B> Programming Language; in parentheses: source code not included; "OPas" = MPW
+Object Pascal
+
+<P>
+<B>Price (circa 1994)</B> (1) free to government contractors, $221 otherwise, (2) educational
+discount available, (3) available as addendum to a book, (4) single 1850 DM, site license 5200 DM,
+(5) single 200 DM, site license 500 DM, (6) free for academic and educational use.
+
+<P>
+<B>Author or Contact</B> Name of creator/maintainer. For internet e-mail addresses, refer to
+the details of the specific package.
+<P>
+<a name="table">
+					      <center>
+<B>ES/GA/XP System Implementations:</B>
+</center>
+<P>
+<table BORDER CELLSPACING=0 CELLPADDING=7 WIDTH="100%" >
+<tr>
+<td>Name</td>
+<td>Type</td>
+<td>OS</td>
+<td>Lang</td>
+<td>Price</td>
+<td>Author/Contact</td>
+</tr>
+<tr>
+<td><a href="Q20_bugs.htm">BUGS</a></td>
+<td>GE, ED</td>
+<td>X11, Suntools</td>
+<td>C</td>
+<td>free</td>
+<td>Joshua Smith</td>
+</tr>
+<tr>
+<td><a href="Q20_compants.htm">ComputerAnts</a></td>
+<td>ED,GA</td>
+<td>Win</td>
+<td>?</td>
+<td>free</td>
+<td>Scott Kennedy</td>
+</tr>
+<tr>
+<td><a href="Q20_dgenesis.htm">DGenesis</a></td>
+<td>GE, PA, ED</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Erick Cantu-Paz</td>
+</tr>
+<tr>
+<td><a href="Q20_dougal.htm">Dougal</a></td>
+<td>SS, GE</td>
+<td>DOS</td>
+<td>Turbo Pascal</td>
+<td>free</td>
+<td>Brett Parker</td>
+</tr>
+<tr>
+<td><a href="Q20_ease.htm">Ease</a></td>
+<td>GE, ES</td>
+<td>Unix</td>
+<td>Tcl</td>
+<td>free</td>
+<td>Joachim Sprave</td>
+</tr>
+<tr>
+<td><a href="Q20_escapade.htm">ESCaPaDE</a></td>
+<td>ES</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Frank Hoffmeister</td>
+</tr>
+<tr>
+<td><a href="Q20_evol_mach.htm">Evolution Machine</a></td>
+<td>GE, ES</td>
+<td>DOS</td>
+<td>C</td>
+<td>free</td>
+<td>Hans-Michael Voigt and Joachim Born</td>
+</tr>
+<tr>
+<td><a href="Q20_evol_objs.htm">Evolutionary Objects</a></td>
+<td>GE, OO</td>
+<td>Unix</td>
+<td>C++</td>
+<td>free</td>
+<td>JJ Merelo</td>
+</tr>
+<tr>
+<td><a href="Q20_gac.htm">GAC, GAL</a></td>
+<td>GE</td>
+<td>Unix</td>
+<td>C / Lisp</td>
+<td>free</td>
+<td>Bill Spears</td>
+</tr>
+<tr>
+<td><a href="Q20_gaga.htm">GAGA</a></td>
+<td>GE</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Jon Crowcroft</td>
+</tr>
+<tr>
+<td><a href="Q20_gags.htm">GAGS</a></td>
+<td>GE, SS, OO</td>
+<td>Unix, DOS</td>
+<td>C++</td>
+<td>free</td>
+<td>JJ Merelo</td>
+</tr>
+<tr>
+<td><a href="Q20_galib.htm">GAlib</a></td>
+<td>GA</td>
+<td>Unix, Mac, DOS</td>
+<td>C++</td>
+<td>free</td>
+<td>Matthew Wall</td>
+</tr>
+<tr>
+<td><a href="Q20_galopps.htm">GALOPPS</a></td>
+<td>GE, PA</td>
+<td>Unix, DOS</td>
+<td>C</td>
+<td>free</td>
+<td>Erik Goodman</td>
+</tr>
+<tr>
+<td><a href="Q20_gamusic.htm">GAMusic</a></td>
+<td>ED</td>
+<td>Win</td>
+<td>(VB)</td>
+<td>$10</td>
+<td>Jason H. Moore</td>
+</tr>
+<tr>
+<td><a href="Q20_gannet.htm">GANNET</a></td>
+<td>GA, NN</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Darrell Duane</td>
+</tr>
+<tr>
+<td><a href="Q20_gaucsd.htm">GAucsd</a></td>
+<td>GE</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Nici Schraudolph</td>
+</tr>
+<tr>
+<td><a href="Q20_ga_wkbnch.htm">GA Workbench</td>
+<td>GE, ED</td>
+<td>DOS</td>
+<td>(C++)</td>
+<td>free</td>
+<td>Mark Hughes</td>
+</tr>
+<tr>
+<td><a href="Q20_geco.htm">GECO</a></td>
+<td>GE, OO, ED</td>
+<td>Unix, MacOS</td>
+<td>Lisp</td>
+<td>free</td>
+<td>George P. W. Williams, Jr.</td>
+</tr>
+<tr>
+<td><a href="Q20_genesis.htm">Genesis</a></td>
+<td>GE, ED</td>
+<td>Unix, DOS</td>
+<td>C</td>
+<td>free</td>
+<td>John Grefenstette</td>
+</tr>
+<tr>
+<td><a href="Q20_genesys.htm">GENEsYs</a></td>
+<td>GE</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Thomas B&auml;ck</td>
+</tr>
+<tr>
+<td><a href="Q20_genet.htm">GenET</a></td>
+<td>SS, ES, ED</td>
+<td>Unix, X, etc.</td>
+<td>C</td>
+<td>free</td>
+<td>Cezary Z. Janikow</td>
+</tr>
+<tr>
+<td><a href="Q20_genie.htm">Genie</a></td>
+<td>GE</td>
+<td>Mac</td>
+<td>Think Pascal</td>
+<td>free</td>
+<td>Lance Chambers</td>
+</tr>
+<tr>
+<td><a href="Q20_genitor.htm">Genitor</a></td>
+<td>SS</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Darrell Whitley</td>
+</tr>
+<tr>
+<td><a href="Q20_genlib.htm">GENlib</a></td>
+<td>SS</td>
+<td>Unix, DOS</td>
+<td>C</td>
+<td>(6)</td>
+<td>Jochen Ruhland</td>
+</tr>
+<tr>
+<td><a href="Q20_genocop.htm">GENOCOP</a></td>
+<td>GE</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Zbigniew Michalewicz</td>
+</tr>
+<tr>
+<td><a href="Q20_giga.htm">GIGA</a></td>
+<td>SS</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>Joe Culberson</td>
+</tr>
+<tr>
+<td><a href="Q20_gpeist.htm">GPEIST</a></td>
+<td>GP</td>
+<td>Win, OS/2</td>
+<td>Smalltalk</td>
+<td>free</td>
+<td>Tony White</td>
+</tr>
+<tr>
+<td><a href="Q20_imogene.htm">Imogene</a></td>
+<td>GP</td>
+<td>Win</td>
+<td>C++</td>
+<td>free</td>
+<td>Harley Davis</td>
+</tr>
+<tr>
+<td><a href="Q20_jag.htm">JAG</a></td>
+<td>GA</td>
+<td>&nbsp;</td>
+<td>Java</td>
+<td>free</td>
+<td>Stephen Hartley</td>
+</tr>
+<tr>
+<td><a href="Q20_libga.htm">LibGA</a></td>
+<td>GE, SS, ED</td>
+<td>Unix, DOS, NeXT, Amiga</td>
+<td>C</td>
+<td>free</td>
+<td>Art Corcoran</td>
+</tr>
+<tr>
+<td><a href="Q20_lice.htm">LICE</a></td>
+<td>ES</td>
+<td>Unix, DOS</td>
+<td>C</td>
+<td>free</td>
+<td>Joachim Sprave</td>
+</tr>
+<tr>
+<td><a href="Q20_matlab_ga.htm">Matlab-GA</a></td>
+<td>GE</td>
+<td>?</td>
+<td>Matlab</td>
+<td>free</td>
+<td>Andy Potvin</td>
+</tr>
+<tr>
+<td><a href="Q20_mga.htm">mGA</a></td>
+<td>GE</td>
+<td>Unix</td>
+<td>C, Lisp</td>
+<td>free</td>
+<td>Dave Goldberg</td>
+</tr>
+<tr>
+<td><a href="Q20_paragenesis.htm">PARAGenesis</a></td>
+<td>PA, GE</td>
+<td>CM</td>
+<td>C*</td>
+<td>free</td>
+<td>Michael van Lent</td>
+</tr>
+<tr>
+<td><a href="Q20_pga.htm">PGA</a></td>
+<td>PA, SS, GE</td>
+<td>Unix,</td>
+<td>C</td>
+<td>free</td>
+<td>Peter Ross</td>
+</tr>
+<tr>
+<td><a href="Q20_pgapack.htm">PGAPack</a></td>
+<td>GA, PA</td>
+<td>any</td>
+<td>C</td>
+<td>free</td>
+<td>David Levine</td>
+</tr>
+<tr>
+<td><a href="Q20_regal.htm">REGAL</a></td>
+<td>GA</td>
+<td>&nbsp;</td>
+<td>C</td>
+<td>free</td>
+<td>Filippo Neri</td>
+</tr>
+<tr>
+<td><a href="Q20_sga_c.htm">SGA-C, SGA-Cube</td>
+<td>GE</td>
+<td>Unix, nCube</td>
+<td>C</td>
+<td>free</td>
+<td>Robert E. Smith</td>
+</tr>
+<tr>
+<td><a href="Q20_splicer.htm">Splicer</a></td>
+<td>GE</td>
+<td>Mac, X11</td>
+<td>C</td>
+<td>(1)</td>
+<td>Steve Bayer</td>
+</tr>
+<tr>
+<td><a href="Q20_tolkien.htm">TOLKIEN</a></td>
+<td>OO, GE</td>
+<td>Unix, DOS</td>
+<td>C++</td>
+<td>free</td>
+<td>Anthony Yiu-Cheung Tang</td>
+</tr>
+<tr>
+<td><a href="Q20_trans_d_learn.htm">Trans-Dimensional Learning</a></td>
+<td>NN</td>
+<td>Win</td>
+<td>?</td>
+<td>free</td>
+<td>Universal Problem Solvers</td>
+</tr>
+<tr>
+<td><a href="Q20_wolf.htm">WOLF</a></td>
+<td>SS</td>
+<td>Unix</td>
+<td>C</td>
+<td>free</td>
+<td>David Rogers</td>
+</tr>
+<tr>
+<td><a href="Q20_xgenetic.htm">XGenetic</a></td>
+<td>GA, OO, ED</td>
+<td>Win</td>
+<td>ActiveX</td>
+<td>free demo</td>
+<td>Jeff Goslin</td>
+</tr>
+</table>
+<P>
+					      <center>
+<B>Classifier System Implementations:</B>
+</center>
+<P>
+<table BORDER CELLSPACING=0 CELLPADDING=7 WIDTH="100%" >
+<tr>
+<td>Name</td>
+<td>Type</td>
+<td>OS</td>
+<td>Lang</td>
+<td>Price</td>
+<td>Author/Contact</td>
+</tr>
+<tr>
+<td><a href="Q20_cfs_c.htm">CFS-C</a></td>
+<td>CF, ED</td>
+<td>Unix, DOS</td>
+<td>C</td>
+<td>free</td>
+<td>Rick Riolo</td>
+</tr>
+<tr>
+<td><a href="Q20_scs_c.htm">SCS-C</a></td>
+<td>CF, ED</td>
+<td>Unix, DOS, Atari TOS</td>
+<td>C</td>
+<td>free</td>
+<td>J&ouml;rg Heitk&ouml;tter</td>
+</tr>
+</table>
+<P>
+					      <center>
+<B>Commercial Packages:</B>
+</center>
+<P>
+<table BORDER CELLSPACING=0 CELLPADDING=7 WIDTH="100%" >
+<tr>
+<td>Name</td>
+<td>Type</td>
+<td>OS</td>
+<td>Lang</td>
+<td>Price</td>
+<td>Author/Contact</td>
+</tr>
+<tr>
+<td><a href="Q20_ACTIVEGA.htm">ActiveGA</a></td>
+<td>GA</td>
+<td>Win</td>
+<td>(ActiveX)</td>
+<td>$99</td>
+<td>Brightwater Software</td>
+</tr>
+<tr>
+<td><a href="Q20_ENGENEER.htm">EnGENEer</a></td>
+<td>OO, GA</td>
+<td>X11</td>
+<td>C</td>
+<td>?</td>
+<td>George Robbins</td>
+</tr>
+<tr>
+<td><a href="Q20_EVOFRAME.htm">EvoFrame</a></td>
+<td>OO, ES</td>
+<td>Mac, DOS</td>
+<td>C++, OPas</td>
+<td>(4,2) (5,2)</td>
+<td>Optimum Software</td>
+</tr>
+<tr>
+<td><a href="Q20_EVOLVER.htm">Evolver</a></td>
+<td>GE</td>
+<td>DOS, Mac</td>
+<td>(C, Pascal)</td>
+<td>UKP350</td>
+<td>Palisade</td>
+</tr>
+<tr>
+<td><a href="Q20_FLEXTOOL.htm">FlexTool</a></td>
+<td>GA</td>
+<td>Win</td>
+<td>Matlab</td>
+<td>?</td>
+<td>Flexible Intelligence Group</td>
+</tr>
+<tr>
+<td><a href="Q20_GAME.htm">GAME</a></td>
+<td>OO, GA</td>
+<td>X11</td>
+<td>C++</td>
+<td>(3)</td>
+<td>Jose R. Filho</td>
+</tr>
+<tr>
+<td><a href="Q20_GENEHUNTER.htm">GeneHunter</a></td>
+<td>GA</td>
+<td>Win, Excel</td>
+<td>(VB)</td>
+<td>$369</td>
+<td>Ward Systems</td>
+</tr>
+<tr>
+<td><a href="Q20_GENERATOR.htm">Generator</a></td>
+<td>GE, SS, ES, OO, ED</td>
+<td>Win, Excel</td>
+<td>(C++)</td>
+<td>$379</td>
+<td>Steve McGrew, New Light Industries</td>
+</tr>
+<tr>
+<td><a href="Q20_GENETIC_SERVER.htm">Genetic Server/ Genetic Library</a></td>
+<td>GE, SS</td>
+<td>Win</td>
+<td>(ActiveX), (C++)</td>
+<td>?</td>
+<td>NeuroDimension Inc.</td>
+</tr>
+<tr>
+<td><a href="Q20_MICROGA.htm">MicroGA / Galapagos</a></td>
+<td>OO, SS</td>
+<td>Mac, Win</td>
+<td>C++</td>
+<td>$249 (2)</td>
+<td>Emergent Behavior, Inc.</td>
+</tr>
+<tr>
+<td><a href="Q20_OMEGA.htm">Omega</a></td>
+<td>?</td>
+<td>DOS</td>
+<td>?</td>
+<td>?</td>
+<td>David Barrow, KiQ Ltd.</td>
+</tr>
+<tr>
+<td><a href="Q20_OOGA.htm">OOGA</a></td>
+<td>OO, GE</td>
+<td>Mac, DOS</td>
+<td>Lisp</td>
+<td>$60</td>
+<td>Lawrence Davis</td>
+</tr>
+<tr>
+<td><a href="Q20_OPTIGA.htm">optiGA</a></td>
+<td>?</td>
+<td>Win</td>
+<td>VB, ActiveX</td>
+<td>?</td>
+<td>Elad Salomons</td>
+</tr>
+<tr>
+<td><a href="Q20_PCBEAGLE.htm">PC-Beagle</a></td>
+<td>XP</td>
+<td>DOS</td>
+<td>?</td>
+<td>69UKP</td>
+<td>Richard Forsyth</td>
+</tr>
+<tr>
+<td><a href="Q20_XPERTRULE.htm">XpertRule GenAsys</a></td>
+<td>XP</td>
+<td>DOS</td>
+<td>(Think Pascal)</td>
+<td>995UKP</td>
+<td>Attar Software</td>
+</tr>
+<tr>
+<td><a href="Q20_XYPE.htm">XYpe</a></td>
+<td>SS</td>
+<td>Mac</td>
+<td>(C)</td>
+<td>$725</td>
+<td>Ed Swartz, Virtual Image Inc.</td>
+</tr>
+</table>
+<P>
+<HR><P><center><A href=Q15_5.htm>[Previous question]</A> <P>
+<A href=Q20_1.htm>[Free Software packages (incl. CFS)]</A>
+<A href=Q20_2.htm>[Commercial Software Packages]</A>
+<A href=Q20_3.htm>[Current Research Projects]</A><P>
+<A href="top.htm">[HHGTEC main contents page]</A>
+<P><i><font size=-1>
+<a href="mistakes.htm">Mistakes in this page?</a><br>
+Hitch Hiker's Guide to Evolutionary Computation,
+Issue 9.1, released 12 April 2001 <br>
+Copyright &copy; 1993-2001 by J. Heitk&ouml;tter and
+D. Beasley, all rights reserved.
+</i></center></font></BODY></HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
